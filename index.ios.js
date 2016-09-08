@@ -26,7 +26,14 @@
    password: t.String
  });
 
- const options = {};
+ var options = {
+   auto: 'placeholders',
+   fields: {
+     password: {
+       secureTextEntry: true
+     }
+   }
+ };
 
  var ChallengeAccepted = React.createClass({
 
@@ -65,8 +72,7 @@
        .then((responseData) => {
          this._onValueChange(STORAGE_KEY, responseData.id_token),
          AlertIOS.alert(
-           "Signup Success!",
-           "Click the button to get a Chuck Norris quote!"
+           "Signup Success!"
          )
        })
        .done();
@@ -90,8 +96,7 @@
        .then((response) => response.json())
        .then((responseData) => {
          AlertIOS.alert(
-           "Login Success!",
-           "Click the button to get a Chuck Norris quote!"
+           "Login Success!"
          ),
          this._onValueChange(STORAGE_KEY, responseData.id_token)
        })
@@ -103,7 +108,7 @@
      return (
        <View style={styles.container}>
          <View style={styles.row}>
-           <Text style={styles.title}>Signup/Login</Text>
+           <Text style={styles.title}>Profile</Text>
          </View>
          <View style={styles.row}>
            <Form
@@ -113,13 +118,13 @@
            />
          </View>
          <View style={styles.row}>
-           <TouchableHighlight style={styles.button} onPress={this._userSignup} underlayColor='#99d9f4'>
+           <TouchableHighlight style={styles.button} onPress={this._userSignup} underlayColor='#9E81DB'>
              <Text style={styles.buttonText}>Signup</Text>
            </TouchableHighlight>
-           <TouchableHighlight style={styles.button} onPress={this._userLogin} underlayColor='#99d9f4'>
+           <TouchableHighlight style={styles.button} onPress={this._userLogin} underlayColor='#9E81DB'>
              <Text style={styles.buttonText}>Login</Text>
            </TouchableHighlight>
-           <TouchableHighlight style={styles.button} onPress={this._userLogout} underlayColor='#99d9f4'>
+           <TouchableHighlight style={styles.button} onPress={this._userLogout} underlayColor='#9E81DB'>
              <Text style={styles.buttonText}>Logout</Text>
            </TouchableHighlight>
          </View>
@@ -147,8 +152,8 @@
    },
    button: {
      height: 36,
-     backgroundColor: '#48BBEC',
-     borderColor: '#48BBEC',
+     backgroundColor: '#5D35B5',
+     borderColor: '#5D35B5',
      borderWidth: 1,
      borderRadius: 8,
      marginBottom: 10,
@@ -156,5 +161,5 @@
      justifyContent: 'center'
    },
  });
- 
+
 AppRegistry.registerComponent('ChallengeAccepted', () => ChallengeAccepted);
