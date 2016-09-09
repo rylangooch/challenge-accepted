@@ -8,7 +8,7 @@
 
 # create users
 bob = User.create(name: 'Bob Bobby', password: 'password123', email: 'hello@hello.com')
-bab = User.create(name: 'Bab Babby', password: 'password321', email: 'bye@bye.com')
+bab = User.create(name: 'Ted Teddy', password: 'password321', email: 'bye@bye.com')
 
 # create challenges
 ping_pong = Challenge.create(title: 'ping-pong masters',
