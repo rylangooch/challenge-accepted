@@ -1,14 +1,12 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
- var React = require('react');
- var ReactNative = require('react-native');
- var Auth0Lock = require('react-native-lock');
- var credentials = require('./environment');
+var React = require('react');
+var ReactNative = require('react-native');
+var Auth0Lock = require('react-native-lock');
+var credentials = require('./environment');
 
- var lock = new Auth0Lock(credentials);
+var lock = new Auth0Lock(credentials);
+
+var WelcomeView = require('./welcome-view');
+var ProfileView = require('./profile-view');
 
  var {
    AppRegistry,
@@ -18,106 +16,79 @@
    View,
    TouchableHighlight,
    AlertIOS,
+   Navigator
  } = ReactNative;
 
  var ChallengeAccepted = React.createClass({
 
-   async _onValueChange(item, selectedValue) {
-     try {
-       await AsyncStorage.setItem(item, selectedValue);
-     } catch (error) {
-       console.log('AsyncStorage error: ' + error.message);
-     }
-   },
-
-   async _userLogout() {
-     try {
-       await AsyncStorage.removeItem(STORAGE_KEY);
-       AlertIOS.alert("Logout Success!")
-     } catch (error) {
-       console.log('AsyncStorage error: ' + error.message);
-     }
-   },
-
-   _userSignup() {
-     var value = this.refs.form.getValue();
-     if (value) { // if validation fails, value will be null
-       fetch("http://localhost:3001/users", {
-         method: "POST",
-         headers: {
-           'Accept': 'application/json',
-           'Content-Type': 'application/json'
-         },
-         body: JSON.stringify({
-           username: value.username,
-           password: value.password,
-         })
-       })
-       .then((response) => response.json())
-       .then((responseData) => {
-         this._onValueChange(STORAGE_KEY, responseData.id_token),
-         AlertIOS.alert(
-           "Signup Success!"
-         )
-       })
-       .done();
-     }
-  },
-
-  _onLogin() {
-    lock.show({}, (err, profile, token) => {
-      if (err) {
-        console.log(err);
-        return;
-      }
-      // Authentication worked!
-      console.log('Logged in with Auth0!');
-    });
-  },
-
-   render() {
-     return (
-       <View style={styles.container}>
-         <View style={styles.row}>
-           <Text style={styles.title}>Profile</Text>
-         </View>
-         <View style={styles.row}>
-           <TouchableHighlight style={styles.button} onPress={this._onLogin} underlayColor='#9E81DB'>
-             <Text style={styles.buttonText}>Login</Text>
-           </TouchableHighlight>
-         </View>
-       </View>
+   render: function() {
+       return (
+         <Navigator style={styles.navigator}
+           initialRoute={{ name: "Welcome"}}
+           renderScene= { this.renderScene }
+           navigationBar={
+              <Navigator.NavigationBar
+                style={ styles.nav }
+                routeMapper={NavigationBarRouteMapper} />
+              }
+         />
      );
-   }
- });
+   },
 
- var styles = StyleSheet.create({
-   container: {
-     justifyContent: 'center',
-     marginTop: 50,
-     padding: 20,
-     backgroundColor: '#ffffff',
+  renderScene: function(route, navigator) {
+     if (route.name == "Welcome") {
+       return <WelcomeView navigator={navigator} {...route.passProps} />
+     }
+     if (route.name == "Profile") {
+       return <ProfileView navigator={navigator} {...route.passProps} />
+    }
+  }
+})
+
+var NavigationBarRouteMapper = {
+   LeftButton(route, navigator, index, navState) {
+     if(index > 0) {
+       return (
+         <TouchableHighlight
+           underlayColor="transparent"
+           onPress={() => { if (index > 0) { navigator.pop() } }}>
+           <Text style={ styles.leftNavButtonText }>Back</Text>
+         </TouchableHighlight>)
+     }
+     else { return null }
+   },
+
+   RightButton(route, navigator, index, navState) {
+     return null
+   },
+
+   Title(route, navigator, index, navState) {
+     return <Text style={ styles.title }>Auth0 Sample</Text>
+   }
+ };
+
+ const styles = StyleSheet.create({
+   navigator: {
+     flex: 1,
    },
    title: {
-     fontSize: 30,
-     alignSelf: 'center',
-     marginBottom: 30
+     marginTop:4,
+     fontSize:16
    },
-   buttonText: {
+   leftNavButtonText: {
+    	fontSize: 18,
+     marginLeft:13,
+     marginTop:2
+   },
+   rightNavButtonText: {
      fontSize: 18,
-     color: 'white',
-     alignSelf: 'center'
+     marginRight:13,
+     marginTop:2
    },
-   button: {
-     height: 36,
-     backgroundColor: '#5D35B5',
-     borderColor: '#5D35B5',
-     borderWidth: 1,
-     borderRadius: 8,
-     marginBottom: 10,
-     alignSelf: 'stretch',
-     justifyContent: 'center'
-   },
+   nav: {
+     height: 60,
+     backgroundColor: '#efefef'
+   }
  });
 
 AppRegistry.registerComponent('ChallengeAccepted', () => ChallengeAccepted);
