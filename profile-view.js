@@ -11,9 +11,16 @@ import {
 
 var API_ENDPOINT = 'http://localhost:3000/challenges';
 
-
-
 var ProfileView = React.createClass({
+  _onViewChallenges: function() {
+    this.props.navigator.push({
+      name: 'Challenges',
+      passProps: {
+        message: "Hello from the profile-view"
+      }
+    });
+  },
+  
   render: function() {
     return (
       <View style={styles.container}>
@@ -27,40 +34,39 @@ var ProfileView = React.createClass({
         <TouchableHighlight
           style={styles.callApiButton}
           underlayColor='#949494'
-          onPress={this._onCallApi}>
+          onPress={this._onViewChallenges}>
           <Text>View Challenges</Text>
         </TouchableHighlight>
       </View>
     );
   },
-  _onCallApi: function() {
-    console.log(this.props.token.idToken);
-    // fetch(API_ENDPOINT, {
-    //   method: "GET",
-    //   headers: {
-    //     'Authorization': 'Bearer ' + this.props.token.idToken
-    //   }
-    // })
-    // .then((response) => response.json())
-    // .then((responseJson) => {
-    //   Alert.alert(
-    //     'response',
-    //     responseJson,
-    //     [
-    //       {text: 'OK'},
-    //     ]
-    //   )
-    // })
-    // .catch((error) => {
-    //   Alert.alert(
-    //     'List Retrieval Failed',
-    //     'Oops',
-    //     [
-    //       {text: 'OK'},
-    //     ]
-    //   )
-    // });
-  },
+  // _onCallApi: function() {
+  //   console.log(this.props.token.idToken);
+  //   fetch(API_ENDPOINT, {
+  //     method: "GET",
+  //     headers: {
+  //       'Authorization': 'Bearer ' + this.props.token.idToken
+  //     }
+  //   })
+  //   .then((response) => response.json())
+  //   .then((responseJson) => {
+  //     this.props.navigator.push({
+  //       name: 'Challenges',
+  //       passProps: {
+  //         challenges: responseJson
+  //       }
+  //     });
+  //   })
+  //   .catch((error) => {
+  //     Alert.alert(
+  //       'List Retrieval Failed',
+  //       'Oops',
+  //       [
+  //         {text: 'OK'},
+  //       ]
+  //     )
+  //   });
+  // },
 });
 
 var styles = StyleSheet.create({

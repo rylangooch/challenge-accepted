@@ -7,6 +7,7 @@ var lock = new Auth0Lock(credentials);
 
 var WelcomeView = require('./welcome-view');
 var ProfileView = require('./profile-view');
+var ChallengeListView = require('./challenges-view');
 
  var {
    AppRegistry,
@@ -36,11 +37,14 @@ var ProfileView = require('./profile-view');
    },
 
   renderScene: function(route, navigator) {
-     if (route.name == "Welcome") {
-       return <WelcomeView navigator={navigator} {...route.passProps} />
+    if (route.name == "Welcome") {
+      return <WelcomeView navigator={navigator} {...route.passProps} />
      }
-     if (route.name == "Profile") {
-       return <ProfileView navigator={navigator} {...route.passProps} />
+    if (route.name == "Profile") {
+      return <ProfileView navigator={navigator} {...route.passProps} />
+    }
+    if (route.name == "Challenges") {
+      return <ChallengeListView navigator={navigator} {...route.passProps} />
     }
   }
 })
@@ -63,7 +67,7 @@ var NavigationBarRouteMapper = {
    },
 
    Title(route, navigator, index, navState) {
-     return <Text style={ styles.title }>Auth0 Sample</Text>
+     return <Text style={ styles.title }>ChallengeAccepted</Text>
    }
  };
 

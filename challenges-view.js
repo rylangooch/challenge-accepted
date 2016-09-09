@@ -16,12 +16,8 @@ var ChallengeListView = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
-        <View style={styles.messageBox}>
-          <Text style={styles.title}>Welcome {this.props.profile.name}</Text>
-        </View>
-        <ScrollView style={styles.challengeList}>
-          <Text style={styles.title}>Welcome {this.props.profile.name}</Text>
-        </View>
+        <Text style={styles.title}>This is the challenges list</Text>
+        <Text style={styles.messageBox}>{this.props.message}</Text>
       </View>
     );
   },
