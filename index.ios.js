@@ -5,7 +5,10 @@
  */
  var React = require('react');
  var ReactNative = require('react-native');
- var t = require('tcomb-form-native');
+ var Auth0Lock = require('react-native-lock');
+ var credentials = require('./environment');
+
+ var lock = new Auth0Lock(credentials);
 
  var {
    AppRegistry,
@@ -16,24 +19,6 @@
    TouchableHighlight,
    AlertIOS,
  } = ReactNative;
-
- var STORAGE_KEY = 'id_token';
-
- var Form = t.form.Form;
-
- var Person = t.struct({
-   username: t.String,
-   password: t.String
- });
-
- var options = {
-   auto: 'placeholders',
-   fields: {
-     password: {
-       secureTextEntry: true
-     }
-   }
- };
 
  var ChallengeAccepted = React.createClass({
 
@@ -77,32 +62,18 @@
        })
        .done();
      }
-   },
+  },
 
-   _userLogin() {
-     var value = this.refs.form.getValue();
-     if (value) { // if validation fails, value will be null
-       fetch("http://localhost:3001/sessions/create", {
-         method: "POST",
-         headers: {
-           'Accept': 'application/json',
-           'Content-Type': 'application/json'
-         },
-         body: JSON.stringify({
-           username: value.username,
-           password: value.password,
-         })
-       })
-       .then((response) => response.json())
-       .then((responseData) => {
-         AlertIOS.alert(
-           "Login Success!"
-         ),
-         this._onValueChange(STORAGE_KEY, responseData.id_token)
-       })
-       .done();
-     }
-   },
+  _onLogin() {
+    lock.show({}, (err, profile, token) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      // Authentication worked!
+      console.log('Logged in with Auth0!');
+    });
+  },
 
    render() {
      return (
@@ -111,21 +82,8 @@
            <Text style={styles.title}>Profile</Text>
          </View>
          <View style={styles.row}>
-           <Form
-             ref="form"
-             type={Person}
-             options={options}
-           />
-         </View>
-         <View style={styles.row}>
-           <TouchableHighlight style={styles.button} onPress={this._userSignup} underlayColor='#9E81DB'>
-             <Text style={styles.buttonText}>Signup</Text>
-           </TouchableHighlight>
-           <TouchableHighlight style={styles.button} onPress={this._userLogin} underlayColor='#9E81DB'>
+           <TouchableHighlight style={styles.button} onPress={this._onLogin} underlayColor='#9E81DB'>
              <Text style={styles.buttonText}>Login</Text>
-           </TouchableHighlight>
-           <TouchableHighlight style={styles.button} onPress={this._userLogout} underlayColor='#9E81DB'>
-             <Text style={styles.buttonText}>Logout</Text>
            </TouchableHighlight>
          </View>
        </View>
