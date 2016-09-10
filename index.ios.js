@@ -70,7 +70,8 @@ var NavigationBarRouteMapper = {
    },
 
    Title(route, navigator, index, navState) {
-     return <Text style={ styles.title }>ChallengeAccepted</Text>
+     return null
+    //  return <Text style={ styles.title }>ChallengeAccepted</Text>
    }
  };
 

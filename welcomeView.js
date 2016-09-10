@@ -16,6 +16,7 @@ var WelcomeView = React.createClass({
     return (
       <View style={styles.container}>
         <View style={styles.messageBox}>
+          <Text style={styles.title}>Challenge Accepted</Text>
           <Text style={styles.subtitle}>Bet friends, not computers</Text>
         </View>
         <TouchableHighlight
@@ -55,6 +56,13 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#15204C',
   },
+  image: {
+    flex: 3,
+    alignSelf: 'center',
+    width: 300,
+    height: 180,
+    marginTop: 100
+  },
   messageBox: {
     flex: 1,
     justifyContent: 'center',
@@ -65,13 +73,16 @@ var styles = StyleSheet.create({
     width: 151,
   },
   title: {
-    fontSize: 17,
+    fontSize: 25,
+    fontWeight: 'bold',
     textAlign: 'center',
     marginTop: 8,
+    padding: 60,
     color: '#FFFFFF',
   },
   subtitle: {
     fontSize: 17,
+    fontStyle: 'italic',
     textAlign: 'center',
     marginTop: 4,
     color: '#FFFFFF',
