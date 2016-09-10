@@ -10,16 +10,33 @@ import {
   ScrollView
 } from 'react-native';
 
-var API_ENDPOINT = 'http://localhost:3000/challenges';
 
-var ChallengeListView = React.createClass({
+var ChallengesView = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>This is the challenges list</Text>
-        <Text style={styles.messageBox}>{this.props.message}</Text>
+        <View style={styles.messageBox}>
+          <Text style={styles.subtitle}>{this.props.message}</Text>
+        </View>
+        <TouchableHighlight
+          style={styles.createChallengeButton}
+          underlayColor='#949494'
+          onPress={this._onCreateChallenge}>
+          <Text>New Challenge</Text>
+        </TouchableHighlight>
       </View>
     );
+  },
+
+  _onCreateChallenge: function() {
+    this.props.navigator.push({
+      name: 'New Challenge',
+      passProps: {
+        // profile: profile,
+        // token: token,
+        message: "Make a challenge my friend"
+      }
+    });
   },
 });
 
@@ -48,13 +65,19 @@ var styles = StyleSheet.create({
     height: 128,
     width: 240,
   },
+  subtitle: {
+    fontSize: 17,
+    textAlign: 'center',
+    marginTop: 4,
+    color: '#FFFFFF',
+  },
   title: {
     fontSize: 17,
     textAlign: 'center',
     marginTop: 20,
     color: '#FFFFFF',
   },
-  callApiButton: {
+  createChallengeButton: {
     height: 50,
     alignSelf: 'stretch',
     backgroundColor: '#D9DADF',
@@ -63,6 +86,7 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
 });
 
-module.exports = ChallengeListView;
+module.exports = ChallengesView;

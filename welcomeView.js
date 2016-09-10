@@ -12,6 +12,22 @@ var credentials = require('./environment');
 var lock = new Auth0Lock(credentials);
 
 var WelcomeView = React.createClass({
+  render: function() {
+    return (
+      <View style={styles.container}>
+        <View style={styles.messageBox}>
+          <Text style={styles.subtitle}>Bet friends, not computers</Text>
+        </View>
+        <TouchableHighlight
+          style={styles.signInButton}
+          underlayColor='#949494'
+          onPress={this._onLogin}>
+          <Text>Log In</Text>
+        </TouchableHighlight>
+      </View>
+    );
+  },
+
   _onLogin: function() {
     lock.show({
         closable: true,
@@ -29,22 +45,6 @@ var WelcomeView = React.createClass({
         }
       });
     });
-  },
-
-  render: function() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.messageBox}>
-          <Text style={styles.subtitle}>Bet Humans, not Computers</Text>
-        </View>
-        <TouchableHighlight
-          style={styles.signInButton}
-          underlayColor='#949494'
-          onPress={this._onLogin}>
-          <Text>Log In</Text>
-        </TouchableHighlight>
-      </View>
-    );
   },
 });
 

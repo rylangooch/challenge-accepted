@@ -5,9 +5,10 @@ var credentials = require('./environment');
 
 var lock = new Auth0Lock(credentials);
 
-var WelcomeView = require('./welcome-view');
-var ProfileView = require('./profile-view');
-var ChallengeListView = require('./challenges-view');
+var WelcomeView = require('./welcomeView');
+var ProfileView = require('./profileView');
+var ChallengesView = require('./challengesView');
+var NewChallengeView = require('./newChallengeView');
 
  var {
    AppRegistry,
@@ -21,7 +22,6 @@ var ChallengeListView = require('./challenges-view');
  } = ReactNative;
 
  var ChallengeAccepted = React.createClass({
-
    render: function() {
        return (
          <Navigator style={styles.navigator}
@@ -33,8 +33,8 @@ var ChallengeListView = require('./challenges-view');
                 routeMapper={NavigationBarRouteMapper} />
               }
          />
-     );
-   },
+       );
+     },
 
   renderScene: function(route, navigator) {
     if (route.name == "Welcome") {
@@ -44,7 +44,10 @@ var ChallengeListView = require('./challenges-view');
       return <ProfileView navigator={navigator} {...route.passProps} />
     }
     if (route.name == "Challenges") {
-      return <ChallengeListView navigator={navigator} {...route.passProps} />
+      return <ChallengesView navigator={navigator} {...route.passProps} />
+    }
+    if (route.name == "New Challenge") {
+      return <NewChallengeView navigator={navigator} {...route.passProps} />
     }
   }
 })
