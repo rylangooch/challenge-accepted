@@ -10,6 +10,7 @@ import Auth0Lock from 'react-native-lock';
 
 var credentials = require('./environment');
 var lock = new Auth0Lock(credentials);
+var styles = require('./styles');
 
 var WelcomeView = React.createClass({
   render: function() {
@@ -46,55 +47,6 @@ var WelcomeView = React.createClass({
         }
       });
     });
-  },
-});
-
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    backgroundColor: '#15204C',
-  },
-  image: {
-    flex: 3,
-    alignSelf: 'center',
-    width: 300,
-    height: 180,
-    marginTop: 100
-  },
-  messageBox: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  badge: {
-    alignSelf: 'center',
-    height: 169,
-    width: 151,
-  },
-  title: {
-    fontSize: 25,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginTop: 8,
-    padding: 60,
-    color: '#FFFFFF',
-  },
-  subtitle: {
-    fontSize: 17,
-    fontStyle: 'italic',
-    textAlign: 'center',
-    marginTop: 4,
-    color: '#FFFFFF',
-  },
-  signInButton: {
-    height: 50,
-    alignSelf: 'stretch',
-    backgroundColor: '#D9DADF',
-    margin: 10,
-    borderRadius: 5,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 });
 

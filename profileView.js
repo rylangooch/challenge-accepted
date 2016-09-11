@@ -9,6 +9,7 @@ import {
   Alert,
 } from 'react-native';
 
+var styles = require('./styles');
 var API_ENDPOINT = 'http://localhost:3000/challenges';
 
 var ProfileView = React.createClass({
@@ -28,6 +29,12 @@ var ProfileView = React.createClass({
           onPress={this._onViewChallenges}>
           <Text>View Challenges</Text>
         </TouchableHighlight>
+        <TouchableHighlight
+          style={styles.createChallengeButton}
+          underlayColor='#949494'
+          onPress={this._onCreateChallenge}>
+          <Text>New Challenge</Text>
+        </TouchableHighlight>
       </View>
     );
   },
@@ -36,9 +43,16 @@ var ProfileView = React.createClass({
     this.props.navigator.push({
       name: 'Challenges',
       passProps: {
-        // profile: profile,
-        // token: token,
         message: "Peruse your challenge list"
+      }
+    });
+  },
+
+  _onCreateChallenge: function() {
+    this.props.navigator.push({
+      name: 'New Challenge',
+      passProps: {
+        message: "Make a challenge my friend"
       }
     });
   },
@@ -69,44 +83,6 @@ var ProfileView = React.createClass({
         ]
       )
     });
-  },
-});
-
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    backgroundColor: '#15204C',
-  },
-  messageBox: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  badge: {
-    alignSelf: 'center',
-    height: 110,
-    width: 102,
-    marginBottom: 80,
-  },
-  avatar: {
-    alignSelf: 'center',
-    height: 128,
-    width: 240,
-  },
-  title: {
-    fontSize: 17,
-    textAlign: 'center',
-    marginTop: 20,
-    color: '#FFFFFF',
-  },
-  callApiButton: {
-    height: 50,
-    alignSelf: 'stretch',
-    backgroundColor: '#D9DADF',
-    margin: 10,
-    borderRadius: 5,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 });
 
