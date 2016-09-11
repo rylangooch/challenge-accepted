@@ -12,6 +12,11 @@ const styles = StyleSheet.create({
   navigator: {
     flex: 1,
   },
+  logo: {
+    width: 70,
+    height: 70,
+    alignSelf: 'center'
+  },
   title: {
     marginTop:4,
     fontSize:16
