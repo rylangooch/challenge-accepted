@@ -5,11 +5,11 @@ var credentials = require('./environment');
 
 var lock = new Auth0Lock(credentials);
 
-var WelcomeView = require('./welcomeView');
-var ProfileView = require('./profileView');
-var ChallengesView = require('./challengesView');
-var NewChallengeView = require('./newChallengeView');
-var styles = require('./styles');
+var WelcomeView = require('./scenes/welcomeView');
+var ProfileView = require('./scenes/profileView');
+var ChallengesView = require('./scenes/challengesView');
+var NewChallengeView = require('./scenes/newChallengeView');
+var styles = require('./components/styles');
 
  var {
    AppRegistry,

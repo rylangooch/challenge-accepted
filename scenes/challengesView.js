@@ -10,7 +10,7 @@ import {
   ScrollView
 } from 'react-native';
 
-var styles = require('./styles');
+var styles = require("../components/styles");
 
 var ChallengesView = React.createClass({
   render: function() {

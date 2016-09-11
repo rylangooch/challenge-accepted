@@ -9,7 +9,7 @@ import {
   Alert,
 } from 'react-native';
 
-var styles = require('./styles');
+var styles = require("../components/styles");
 var API_ENDPOINT = 'http://localhost:3000/challenges';
 
 var ProfileView = React.createClass({

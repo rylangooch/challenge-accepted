@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-var styles = require('./styles');
+var styles = require("../components/styles");
 
 import {
   StyleSheet,

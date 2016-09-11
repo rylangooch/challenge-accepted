@@ -8,9 +8,9 @@ import {
 } from 'react-native';
 import Auth0Lock from 'react-native-lock';
 
-var credentials = require('./environment');
+var credentials = require("../environment");
 var lock = new Auth0Lock(credentials);
-var styles = require('./styles');
+var styles = require("../components/styles");
 
 var WelcomeView = React.createClass({
   render: function() {
