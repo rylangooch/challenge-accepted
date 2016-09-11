@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   createChallengeButton: {
     height: 50,
     alignSelf: 'stretch',
-    backgroundColor: '#D9DADF',
+    backgroundColor: '#FFF',
     margin: 10,
     borderRadius: 5,
     justifyContent: 'center',
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
   callApiButton: {
     height: 50,
     alignSelf: 'stretch',
-    backgroundColor: '#D9DADF',
+    backgroundColor: '#FFF',
     margin: 10,
     borderRadius: 5,
     justifyContent: 'center',
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
   signInButton: {
     height: 50,
     alignSelf: 'stretch',
-    backgroundColor: '#D9DADF',
+    backgroundColor: '#FFF',
     margin: 10,
     borderRadius: 5,
     justifyContent: 'center',
@@ -122,13 +122,13 @@ const styles = StyleSheet.create({
     fontSize: 14,
     borderRadius: 5,
     borderWidth: 1,
-    borderColor: '#D9DADF',
-    backgroundColor: '#D9DADF'
+    borderColor: '#FFF',
+    backgroundColor: '#FFF'
   },
   button: {
     height: 50,
     alignSelf: 'stretch',
-    backgroundColor: '#D9DADF',
+    backgroundColor: '#FFF',
     margin: 10,
     borderRadius: 5,
     justifyContent: 'center',
