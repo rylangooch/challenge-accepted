@@ -51,8 +51,9 @@ const styles = StyleSheet.create({
   },
   avatar: {
     alignSelf: 'center',
-    height: 128,
-    width: 240,
+    height: 200,
+    width: 200,
+    borderRadius: 100,
   },
   subtitle: {
     fontSize: 17,
@@ -61,9 +62,11 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
   title: {
-    fontSize: 17,
+    fontSize: 28,
+    fontWeight: '300',
     textAlign: 'center',
     marginTop: 20,
+    marginBottom: 5,
     color: '#FFFFFF',
   },
   createChallengeButton: {
@@ -103,7 +106,8 @@ const styles = StyleSheet.create({
   input: {
     height: 50,
     marginTop: 10,
-    padding: 2,
+    padding: 10,
+    margin: 10,
     fontSize: 14,
     borderRadius: 5,
     borderWidth: 1,
@@ -125,9 +129,10 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   heading: {
-    fontSize: 17,
-    marginTop: 15,
-    marginBottom: 65,
+    fontSize: 24,
+    fontWeight: '300',
+    marginTop: 100,
+    marginBottom: 40,
     alignSelf: 'center',
     color: '#FFF'
   },

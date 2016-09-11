@@ -19,21 +19,21 @@ var NewChallengeView = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
-          <Text style={styles.heading}>
-            Set your challenge
+        <Text style={styles.heading}>
+          Set Your Challenge
+        </Text>
+        <TextInput
+          style={styles.input} placeholder="Title">
+        </TextInput>
+        <TextInput
+          style={styles.input}
+          placeholder="Ante">
+        </TextInput>
+        <TouchableHighlight style={styles.button}>
+          <Text style={styles.buttonText}>
+            Create Challenge
           </Text>
-          <TextInput
-            style={styles.input} placeholder="Title">
-          </TextInput>
-          <TextInput
-            style={styles.input}
-            placeholder="Ante">
-          </TextInput>
-          <TouchableHighlight style={styles.button}>
-            <Text style={styles.buttonText}>
-              Submit
-            </Text>
-          </TouchableHighlight>
+        </TouchableHighlight>
       </View>
     );
   },
