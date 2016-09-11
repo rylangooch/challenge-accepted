@@ -21,7 +21,7 @@ var ProfileView = React.createClass({
             style={styles.avatar}
             source={{uri: this.props.profile.picture}}
           />
-          <Text style={styles.title}>Welcome {this.props.profile.name}</Text>
+        <Text style={styles.welcome_title}>Welcome {this.props.profile.name}</Text>
         </View>
         <TouchableHighlight
           style={styles.callApiButton}

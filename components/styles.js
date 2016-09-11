@@ -61,6 +61,12 @@ const styles = StyleSheet.create({
     marginTop: 4,
     color: '#FFFFFF',
   },
+  welcome_title: {
+    fontSize: 18,
+    textAlign: 'center',
+    marginTop: 20,
+    color: '#FFFFFF',
+  },
   title: {
     fontSize: 28,
     fontWeight: '300',
