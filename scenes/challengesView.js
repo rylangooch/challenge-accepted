@@ -16,6 +16,9 @@ var ChallengesView = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
+        <Text style={styles.heading}>
+          Challenges
+        </Text>
         <View style={styles.messageBox}>
           <Text style={styles.subtitle}>{this.props.message}</Text>
         </View>

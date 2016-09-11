@@ -20,7 +20,7 @@ var NewChallengeView = React.createClass({
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
-          Set Your Challenge
+          New Challenge
         </Text>
         <TextInput
           style={styles.input} placeholder="Title">
