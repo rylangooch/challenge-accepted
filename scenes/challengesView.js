@@ -32,7 +32,8 @@ var ChallengesView = React.createClass({
         <View style={styles.messageBox}>
           <ListView
           dataSource={this.state.challenges}
-          renderRow={(rowData) => <Text style={styles.subtitle}>{rowData}</Text>}
+          renderRow= {(rowData) =>  <TouchableHighlight style={styles.touchableHighlight}><Text style={styles.buttonText}>{rowData}</Text></TouchableHighlight>}
+          // renderRow = {this._renderRow}
           />
         </View>
         <TouchableHighlight
@@ -45,13 +46,15 @@ var ChallengesView = React.createClass({
     );
   },
 
+  // _renderRow: function (rowData) {
+  //   return <TouchableHighlight> <Text style={styles.subtitle}>Hello world</Text> </TouchableHighlight>
+  // },
+
   _showChallenges: function() {
     var challengeTitles = [];
-
     for(var i = 0; i < this.props.challengeJson.data.length; i++) {
       challengeTitles.push(this.props.challengeJson.data[i].attributes.title.toString());
     }
-
     return challengeTitles;
   },
 

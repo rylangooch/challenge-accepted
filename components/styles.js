@@ -134,6 +134,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  touchableHighlight: {
+    height: 60,
+    backgroundColor: '#FFF',
+    borderBottomWidth:1,
+    borderBottomColor: '#15204C',
+    flexDirection:'row',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
   buttonText: {
     fontSize: 15,
     color: '#000000',
