@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 
 var styles = require("../components/styles");
-var API_ENDPOINT = 'http://localhost:3000/challenges';
 
 var ProfileView = React.createClass({
   render: function() {
@@ -21,7 +20,7 @@ var ProfileView = React.createClass({
             style={styles.avatar}
             source={{uri: this.props.profile.picture}}
           />
-        <Text style={styles.welcome_title}>Welcome {this.props.profile.name}</Text>
+        <Text style={styles.title}>Welcome {this.props.profile.email}</Text>
         </View>
         <TouchableHighlight
           style={styles.callApiButton}
@@ -40,12 +39,31 @@ var ProfileView = React.createClass({
   },
 
   _onViewChallenges: function() {
-    this.props.navigator.push({
-      name: 'Challenges',
-      passProps: {
-        message: "Peruse your challenge list"
+    fetch('http://localhost:3000/challenges', {
+      method: "GET",
+      headers: {
+        'Accept': 'application/vnd.api+json',
+        'Content-Type': 'application/vnd.api+json',
       }
-    });
+    })
+    .then((response) => response.json())
+    .then((responseJson) => {
+      console.log(responseJson);
+      this.props.navigator.push({
+        name: 'Challenges',
+        passProps: {
+          challengeJson: responseJson
+        }
+      });
+    })
+    .catch((error) => {
+      Alert.alert(
+        "List Retrieval Failed",
+        [
+          {text: 'OK'},
+        ]
+      )
+    })
   },
 
   _onCreateChallenge: function() {
@@ -57,33 +75,34 @@ var ProfileView = React.createClass({
     });
   },
 
-  _onCallApi: function() {
-    console.log(this.props.token.idToken);
-    fetch(API_ENDPOINT, {
-      method: "GET",
-      headers: {
-        'Authorization': 'Bearer ' + this.props.token.idToken
-      }
-    })
-    .then((response) => response.json())
-    .then((responseJson) => {
-      this.props.navigator.push({
-        name: 'Challenges',
-        passProps: {
-          challenges: responseJson
-        }
-      });
-    })
-    .catch((error) => {
-      Alert.alert(
-        'List Retrieval Failed',
-        'Oops',
-        [
-          {text: 'OK'},
-        ]
-      )
-    });
-  },
+  // _onCallApi: function() {
+  //   fetch('http://localhost:3000/challenges', {
+  //     method: "GET",
+  //     headers: {
+  //       'Authorization': 'Bearer ' + this.props.token.idToken
+  //       'Accept': 'application/vnd.api+json',
+  //       'Content-Type': 'application/vnd.api+json',
+  //     }
+  //   })
+  //   .then((response) => response.json())
+  //   .then((responseJson) => {
+  //     this.props.navigator.push({
+  //       name: 'Challenges',
+  //       passProps: {
+  //         challenges: responseJson
+  //       }
+  //     });
+  //   })
+  //   .catch((error) => {
+  //     Alert.alert(
+  //       'List Retrieval Failed',
+  //       'Oops',
+  //       [
+  //         {text: 'OK'},
+  //       ]
+  //     )
+  //   });
+  // },
 });
 
 module.exports = ProfileView;

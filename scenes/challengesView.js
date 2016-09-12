@@ -13,14 +13,22 @@ import {
 var styles = require("../components/styles");
 
 var ChallengesView = React.createClass({
+  // getInitialState: function() {
+  //   return {
+  //     challengeDetails: this.props.challengeJson
+  //   }
+  // },
+
   render: function() {
+    console.log(this.props.challengeJson);
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
           Challenges
         </Text>
         <View style={styles.messageBox}>
-          <Text style={styles.subtitle}>{this.props.message}</Text>
+          <Text style={styles.title}>Challenges</Text>
+          <Text style={styles.subtitle}>{this.props.challengeJson.data[0].attributes.title}</Text>
         </View>
         <TouchableHighlight
           style={styles.createChallengeButton}
@@ -32,12 +40,16 @@ var ChallengesView = React.createClass({
     );
   },
 
+  _showChallenges: function() {
+    for(var i = 0; i < this.props.challengeJson.data.length(); i++) {
+
+    }
+  },
+
   _onCreateChallenge: function() {
     this.props.navigator.push({
       name: 'New Challenge',
       passProps: {
-        // profile: profile,
-        // token: token,
         message: "Make a challenge my friend"
       }
     });
