@@ -80,6 +80,14 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     color: '#FFFFFF',
   },
+  welcomeTitle: {
+    fontSize: 18,
+    fontWeight: '300',
+    textAlign: 'center',
+    marginTop: 20,
+    marginBottom: 5,
+    color: '#FFFFFF',
+  },
   createChallengeButton: {
     height: 50,
     alignSelf: 'stretch',
