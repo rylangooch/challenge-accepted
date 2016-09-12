@@ -1,3 +1,4 @@
+'use strict';
 import React, { Component } from 'react';
 
 import {
@@ -47,16 +48,6 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     padding: 10,
     paddingTop: 80
-  },
-  messageBox: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  subtitle: {
-    fontSize: 17,
-    textAlign: 'center',
-    marginTop: 4,
-    color: '#FFFFFF',
   },
   input: {
     height: 50,
