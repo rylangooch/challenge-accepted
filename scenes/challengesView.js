@@ -13,20 +13,19 @@ import {
 var styles = require("../components/styles");
 
 var ChallengesView = React.createClass({
-  getInitialState: function() {
-    return {
-      challengeDetails: this.props.challengeJson
-    }
-  },
+  // getInitialState: function() {
+  //   return {
+  //     challengeDetails: this.props.challengeJson
+  //   }
+  // },
 
   render: function() {
+    console.log(this.props.challengeJson);
     return (
       <View style={styles.container}>
         <View style={styles.messageBox}>
           <Text style={styles.title}>Challenges</Text>
-          // <Text style={styles.subtitle}>{JSON.stringify(this.props.challengeJson)}</Text> //working?
-          console.log({JSON.stringify(this.props.challengeJson)});
-          // <Text style={styles.subtitle}>{this.props.challengeJson}</Text>
+          <Text style={styles.subtitle}>{this.props.challengeJson.data[0].attributes.title}</Text>
         </View>
         <TouchableHighlight
           style={styles.createChallengeButton}
