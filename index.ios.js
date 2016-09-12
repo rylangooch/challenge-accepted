@@ -1,3 +1,4 @@
+'use strict';
 var React = require('react');
 var ReactNative = require('react-native');
 var Auth0Lock = require('react-native-lock');
@@ -77,3 +78,4 @@ var NavigationBarRouteMapper = {
  };
 
 AppRegistry.registerComponent('ChallengeAccepted', () => ChallengeAccepted);
+module.exports = ChallengeAccepted;

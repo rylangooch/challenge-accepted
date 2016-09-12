@@ -27,7 +27,6 @@ var ChallengesView = React.createClass({
           Challenges
         </Text>
         <View style={styles.messageBox}>
-          <Text style={styles.title}>Challenges</Text>
           <Text style={styles.subtitle}>{this.props.challengeJson.data[0].attributes.title}</Text>
         </View>
         <TouchableHighlight
