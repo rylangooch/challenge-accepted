@@ -10,11 +10,13 @@ import {
 } from 'react-native';
 
 var NewChallengeView = React.createClass({
-  // static get defaultProps() {
-  //   return {
-  //     title: 'New Challenge'
-  //   };
-  // }
+
+  getInitialState() {
+    return {
+      challengeTitle: '',
+      challengeAnte: ''
+    }
+  },
 
   render: function() {
     return (
@@ -23,13 +25,20 @@ var NewChallengeView = React.createClass({
           New Challenge
         </Text>
         <TextInput
-          style={styles.input} placeholder="Title">
+          id="title"
+          style={styles.input}
+          placeholder="Title"
+          value={this.state.challengeTitle}
+          onChange={(event) => this.setState({challengeTitle: event.nativeEvent.text})}>
         </TextInput>
         <TextInput
+          id="ante"
           style={styles.input}
-          placeholder="Ante">
+          placeholder="Ante"
+          value={this.state.challengeAnte}
+          onChange={(event) => this.setState({challengeAnte: event.nativeEvent.text})}>
         </TextInput>
-        <TouchableHighlight style={styles.button}>
+        <TouchableHighlight underlayColor='#949494' style={styles.button} onPress={this._viewFormSubmit}>
           <Text style={styles.buttonText}>
             Create Challenge
           </Text>
@@ -37,6 +46,29 @@ var NewChallengeView = React.createClass({
       </View>
     );
   },
+
+  _viewFormSubmit: function() {
+    let title = this.state.challengeTitle;
+    let ante = this.state.challengeAnte;
+
+    fetch('http://localhost:3000/challenges', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/vnd.api+json',
+        'Content-Type': 'application/vnd.api+json',
+      },
+      body: JSON.stringify({
+        data: [{
+          "type": "challenges",
+          "attributes": {
+            "title": title,
+            "ante": ante,
+            "user-id": 1
+          }
+        }]
+      })
+    });
+  }
 });
 
 module.exports = NewChallengeView;
