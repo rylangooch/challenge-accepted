@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Text,
   View,
+  Alert,
   TextInput,
   TouchableHighlight,
 } from 'react-native';
@@ -25,6 +26,7 @@ var NewChallengeView = React.createClass({
         <Text style={styles.heading}>
           New Challenge
         </Text>
+
         <TextInput
           style={styles.input}
           placeholder="Title"
@@ -61,6 +63,17 @@ var NewChallengeView = React.createClass({
     let description = this.state.challengeDescription;
     let ante        = this.state.challengeAnte;
 
+    if (title == "" || description == "" || ante == "") {
+      Alert.alert(
+        "Error",
+        "All fields must be completed",
+        [
+          {text: 'OK'}
+        ]
+      )
+      return;
+    }
+
     fetch('http://localhost:3000/challenges', {
       method: 'POST',
       headers: {
@@ -78,7 +91,27 @@ var NewChallengeView = React.createClass({
           }
         }]
       })
-    });
+    })
+    .then((response) => {
+      if (response.status == 201) {
+        this.props.navigator.pop();
+      } else {
+        Alert.alert(
+          "Failed to create challenge",
+          [
+            {text: 'OK'},
+          ]
+        )
+      }
+    })
+    .catch((error) => {
+      Alert.alert(
+        "Failed to create challenge",
+        [
+          {text: 'OK'},
+        ]
+      )
+    })
   }
 });
 
