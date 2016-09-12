@@ -23,6 +23,9 @@ var ChallengesView = React.createClass({
     console.log(this.props.challengeJson);
     return (
       <View style={styles.container}>
+        <Text style={styles.heading}>
+          Challenges
+        </Text>
         <View style={styles.messageBox}>
           <Text style={styles.title}>Challenges</Text>
           <Text style={styles.subtitle}>{this.props.challengeJson.data[0].attributes.title}</Text>

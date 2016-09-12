@@ -12,6 +12,11 @@ const styles = StyleSheet.create({
   navigator: {
     flex: 1,
   },
+  logo: {
+    width: 70,
+    height: 70,
+    alignSelf: 'center'
+  },
   title: {
     marginTop:4,
     fontSize:16
@@ -51,8 +56,9 @@ const styles = StyleSheet.create({
   },
   avatar: {
     alignSelf: 'center',
-    height: 128,
-    width: 240,
+    height: 200,
+    width: 200,
+    borderRadius: 100,
   },
   subtitle: {
     fontSize: 17,
@@ -60,16 +66,24 @@ const styles = StyleSheet.create({
     marginTop: 4,
     color: '#FFFFFF',
   },
-  title: {
-    fontSize: 17,
+  welcome_title: {
+    fontSize: 18,
     textAlign: 'center',
     marginTop: 20,
+    color: '#FFFFFF',
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: '300',
+    textAlign: 'center',
+    marginTop: 20,
+    marginBottom: 5,
     color: '#FFFFFF',
   },
   createChallengeButton: {
     height: 50,
     alignSelf: 'stretch',
-    backgroundColor: '#D9DADF',
+    backgroundColor: '#FFF',
     margin: 10,
     borderRadius: 5,
     justifyContent: 'center',
@@ -78,7 +92,7 @@ const styles = StyleSheet.create({
   callApiButton: {
     height: 50,
     alignSelf: 'stretch',
-    backgroundColor: '#D9DADF',
+    backgroundColor: '#FFF',
     margin: 10,
     borderRadius: 5,
     justifyContent: 'center',
@@ -94,7 +108,7 @@ const styles = StyleSheet.create({
   signInButton: {
     height: 50,
     alignSelf: 'stretch',
-    backgroundColor: '#D9DADF',
+    backgroundColor: '#FFF',
     margin: 10,
     borderRadius: 5,
     justifyContent: 'center',
@@ -103,17 +117,18 @@ const styles = StyleSheet.create({
   input: {
     height: 50,
     marginTop: 10,
-    padding: 2,
+    padding: 10,
+    margin: 10,
     fontSize: 14,
     borderRadius: 5,
     borderWidth: 1,
-    borderColor: '#D9DADF',
-    backgroundColor: '#D9DADF'
+    borderColor: '#FFF',
+    backgroundColor: '#FFF'
   },
   button: {
     height: 50,
     alignSelf: 'stretch',
-    backgroundColor: '#D9DADF',
+    backgroundColor: '#FFF',
     margin: 10,
     borderRadius: 5,
     justifyContent: 'center',
@@ -125,9 +140,10 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   heading: {
-    fontSize: 17,
-    marginTop: 15,
-    marginBottom: 65,
+    fontSize: 24,
+    fontWeight: '300',
+    marginTop: 100,
+    marginBottom: 40,
     alignSelf: 'center',
     color: '#FFF'
   },
