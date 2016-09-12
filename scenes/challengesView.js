@@ -38,7 +38,7 @@ var ChallengesView = React.createClass({
   },
 
   _showChallenges: function() {
-    for(var i = 0; i < this.props.challengeJson.length(); i++) {
+    for(var i = 0; i < this.props.challengeJson.data.length(); i++) {
 
     }
   },
