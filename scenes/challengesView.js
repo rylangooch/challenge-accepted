@@ -5,6 +5,7 @@ import {
   Text,
   View,
   Image,
+  ListView,
   TouchableHighlight,
   Alert,
   ScrollView
@@ -14,8 +15,9 @@ var styles = require("../components/styles");
 
 var ChallengesView = React.createClass({
   getInitialState: function() {
+    var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     return {
-      challenges: this._showChallenges()
+      challenges: ds.cloneWithRows(this._showChallenges())
     }
   },
 
@@ -28,8 +30,10 @@ var ChallengesView = React.createClass({
           Challenges
         </Text>
         <View style={styles.messageBox}>
-          <Text style={styles.subtitle}>{this.props.challengeJson.data[0].attributes.title}</Text>
-          <Text style={styles.subtitle}>{this.state.challenges}</Text>
+          <ListView
+          dataSource={this.state.challenges}
+          renderRow={(rowData) => <Text style={styles.subtitle}>{rowData}</Text>}
+          />
         </View>
         <TouchableHighlight
           style={styles.createChallengeButton}
