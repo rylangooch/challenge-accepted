@@ -13,14 +13,15 @@ import {
 var styles = require("../components/styles");
 
 var ChallengesView = React.createClass({
-  // getInitialState: function() {
-  //   return {
-  //     challengeDetails: this.props.challengeJson
-  //   }
-  // },
+  getInitialState: function() {
+    return {
+      challenges: this._showChallenges()
+    }
+  },
 
   render: function() {
     console.log(this.props.challengeJson);
+    console.log(this.state.challenges);
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
@@ -28,6 +29,7 @@ var ChallengesView = React.createClass({
         </Text>
         <View style={styles.messageBox}>
           <Text style={styles.subtitle}>{this.props.challengeJson.data[0].attributes.title}</Text>
+          <Text style={styles.subtitle}>{this.state.challenges}</Text>
         </View>
         <TouchableHighlight
           style={styles.createChallengeButton}
@@ -40,9 +42,13 @@ var ChallengesView = React.createClass({
   },
 
   _showChallenges: function() {
-    for(var i = 0; i < this.props.challengeJson.data.length(); i++) {
+    var challengeTitles = [];
 
+    for(var i = 0; i < this.props.challengeJson.data.length; i++) {
+      challengeTitles.push(this.props.challengeJson.data[i].attributes.title.toString());
     }
+
+    return challengeTitles;
   },
 
   _onCreateChallenge: function() {
