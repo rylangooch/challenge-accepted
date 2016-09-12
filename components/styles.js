@@ -133,6 +133,17 @@ const styles = StyleSheet.create({
     borderColor: '#FFF',
     backgroundColor: '#FFF'
   },
+  inputTextArea: {
+    height: 100,
+    marginTop: 10,
+    padding: 10,
+    margin: 10,
+    fontSize: 14,
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#FFF',
+    backgroundColor: '#FFF'
+  },
   button: {
     height: 50,
     alignSelf: 'stretch',

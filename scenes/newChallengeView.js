@@ -14,6 +14,7 @@ var NewChallengeView = React.createClass({
   getInitialState() {
     return {
       challengeTitle: '',
+      challengeDescription: '',
       challengeAnte: ''
     }
   },
@@ -25,19 +26,27 @@ var NewChallengeView = React.createClass({
           New Challenge
         </Text>
         <TextInput
-          id="title"
           style={styles.input}
           placeholder="Title"
           value={this.state.challengeTitle}
           onChange={(event) => this.setState({challengeTitle: event.nativeEvent.text})}>
         </TextInput>
+
         <TextInput
-          id="ante"
+          multiline={true}
+          style={styles.inputTextArea}
+          placeholder="Description"
+          value={this.state.challengeDescription}
+          onChange={(event) => this.setState({challengeDescription: event.nativeEvent.text})}>
+        </TextInput>
+
+        <TextInput
           style={styles.input}
           placeholder="Ante"
           value={this.state.challengeAnte}
           onChange={(event) => this.setState({challengeAnte: event.nativeEvent.text})}>
         </TextInput>
+
         <TouchableHighlight underlayColor='#949494' style={styles.button} onPress={this._viewFormSubmit}>
           <Text style={styles.buttonText}>
             Create Challenge
@@ -48,8 +57,9 @@ var NewChallengeView = React.createClass({
   },
 
   _viewFormSubmit: function() {
-    let title = this.state.challengeTitle;
-    let ante = this.state.challengeAnte;
+    let title       = this.state.challengeTitle;
+    let description = this.state.challengeDescription;
+    let ante        = this.state.challengeAnte;
 
     fetch('http://localhost:3000/challenges', {
       method: 'POST',
@@ -62,6 +72,7 @@ var NewChallengeView = React.createClass({
           "type": "challenges",
           "attributes": {
             "title": title,
+            "description": description,
             "ante": ante,
             "user-id": 1
           }
