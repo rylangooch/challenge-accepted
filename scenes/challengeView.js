@@ -16,10 +16,12 @@ var ChallengeView = React.createClass({
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
-          Challenge Title/Description
+          {this.props.challenge.attributes.title}
         </Text>
         <View style={styles.messageBox}>
-        
+          <Text style={styles.heading}>
+            {this.props.challenge.attributes.description}
+          </Text>
         </View>
       </View>
     )

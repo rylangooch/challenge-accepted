@@ -8,6 +8,7 @@ var lock = new Auth0Lock(credentials);
 
 var WelcomeView = require('./scenes/welcomeView');
 var ProfileView = require('./scenes/profileView');
+var ChallengeView = require('./scenes/challengeView');
 var ChallengesView = require('./scenes/challengesView');
 var NewChallengeView = require('./scenes/newChallengeView');
 var styles = require('./components/styles');
@@ -50,6 +51,9 @@ var styles = require('./components/styles');
     }
     if (route.name == "New Challenge") {
       return <NewChallengeView navigator={navigator} {...route.passProps} />
+    }
+    if (route.name == "Single Challenge") {
+      return <ChallengeView navigator={navigator} {...route.passProps} />
     }
   }
 })

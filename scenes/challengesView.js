@@ -33,11 +33,7 @@ var ChallengesView = React.createClass({
         <View style={styles.messageBox}>
           <ListView
             dataSource={this.state.challenges}
-            renderRow= {(rowData) => <TouchableHighlight
-                style={styles.touchableHighlight}
-                onPress={this._onViewChallenge}>
-                <Text style={styles.buttonText}>{rowData.attributes.title}</Text>
-              </TouchableHighlight>}
+            renderRow= {(rowData) => this._renderRow(rowData)}
           />
         </View>
         <TouchableHighlight
@@ -50,16 +46,21 @@ var ChallengesView = React.createClass({
     );
   },
 
-  _onViewChallenge: function () {
+  _renderRow: function(rowData) {
     return (
-      Alert.alert(
-        "Hello world",
-        'You suck',
-        [
-          {text: 'OK'}
-        ]
-      )
+      <TouchableHighlight style={styles.touchableHighlight} onPress={()=> this._onViewChallenge(rowData)}>
+          <Text style={styles.buttonText}>{rowData.attributes.title}</Text>
+      </TouchableHighlight>
     )
+  },
+
+  _onViewChallenge: function (rowData) {
+    this.props.navigator.push({
+      name: 'Single Challenge',
+      passProps: {
+        challenge: rowData
+      }
+    });
   },
 
   _onCreateChallenge: function() {
