@@ -82,6 +82,14 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     color: '#FFFFFF',
   },
+  welcomeTitle: {
+    fontSize: 18,
+    fontWeight: '300',
+    textAlign: 'center',
+    marginTop: 20,
+    marginBottom: 5,
+    color: '#FFFFFF',
+  },
   createChallengeButton: {
     height: 50,
     alignSelf: 'stretch',
@@ -118,6 +126,17 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 50,
+    marginTop: 10,
+    padding: 10,
+    margin: 10,
+    fontSize: 14,
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#FFF',
+    backgroundColor: '#FFF'
+  },
+  inputTextArea: {
+    height: 100,
     marginTop: 10,
     padding: 10,
     margin: 10,

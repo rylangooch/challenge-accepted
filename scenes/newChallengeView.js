@@ -5,16 +5,20 @@ import {
   StyleSheet,
   Text,
   View,
+  Alert,
   TextInput,
   TouchableHighlight,
 } from 'react-native';
 
 var NewChallengeView = React.createClass({
-  // static get defaultProps() {
-  //   return {
-  //     title: 'New Challenge'
-  //   };
-  // }
+
+  getInitialState() {
+    return {
+      challengeTitle: '',
+      challengeDescription: '',
+      challengeAnte: ''
+    }
+  },
 
   render: function() {
     return (
@@ -22,14 +26,30 @@ var NewChallengeView = React.createClass({
         <Text style={styles.heading}>
           New Challenge
         </Text>
-        <TextInput
-          style={styles.input} placeholder="Title">
-        </TextInput>
+
         <TextInput
           style={styles.input}
-          placeholder="Ante">
+          placeholder="Title"
+          value={this.state.challengeTitle}
+          onChange={(event) => this.setState({challengeTitle: event.nativeEvent.text})}>
         </TextInput>
-        <TouchableHighlight style={styles.button}>
+
+        <TextInput
+          multiline={true}
+          style={styles.inputTextArea}
+          placeholder="Description"
+          value={this.state.challengeDescription}
+          onChange={(event) => this.setState({challengeDescription: event.nativeEvent.text})}>
+        </TextInput>
+
+        <TextInput
+          style={styles.input}
+          placeholder="Ante"
+          value={this.state.challengeAnte}
+          onChange={(event) => this.setState({challengeAnte: event.nativeEvent.text})}>
+        </TextInput>
+
+        <TouchableHighlight underlayColor='#949494' style={styles.button} onPress={this._viewFormSubmit}>
           <Text style={styles.buttonText}>
             Create Challenge
           </Text>
@@ -37,6 +57,62 @@ var NewChallengeView = React.createClass({
       </View>
     );
   },
+
+  _viewFormSubmit: function() {
+    let title       = this.state.challengeTitle;
+    let description = this.state.challengeDescription;
+    let ante        = this.state.challengeAnte;
+
+    if (title == "" || description == "" || ante == "") {
+      Alert.alert(
+        "Error",
+        "All fields must be completed",
+        [
+          {text: 'OK'}
+        ]
+      )
+      return;
+    }
+
+    fetch('http://localhost:3000/challenges', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/vnd.api+json',
+        'Content-Type': 'application/vnd.api+json',
+      },
+      body: JSON.stringify({
+        data: [{
+          "type": "challenges",
+          "attributes": {
+            "title": title,
+            "description": description,
+            "ante": ante,
+            "user-id": 1
+          }
+        }]
+      })
+    })
+    .then((response) => {
+      if (response.status == 201) {
+        this.props.navigator.pop();
+      } else {
+        Alert.alert(
+          "Failed to create challenge",
+          [
+            {text: 'OK'},
+          ]
+        )
+      }
+    })
+    .catch((error) => {
+      Alert.alert(
+        "Failed to create challenge",
+        [
+          {text: 'OK'},
+        ]
+      )
+    })
+  }
 });
 
 module.exports = NewChallengeView;
