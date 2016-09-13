@@ -55,16 +55,12 @@ var ChallengesView = React.createClass({
   },
 
   _onViewChallenge: function (rowData) {
-    console.log(rowData);
-    return (
-      Alert.alert(
-        rowData.attributes.title,
-        'You suck',
-        [
-          {text: 'OK'}
-        ]
-      )
-    )
+    this.props.navigator.push({
+      name: 'Single Challenge',
+      passProps: {
+        challenge: rowData
+      }
+    });
   },
 
   _onCreateChallenge: function() {
