@@ -5,6 +5,7 @@ import {
   Text,
   View,
   Image,
+  ListView,
   TouchableHighlight,
   Alert,
   ScrollView
@@ -13,21 +14,31 @@ import {
 var styles = require("../components/styles");
 
 var ChallengesView = React.createClass({
-  // getInitialState: function() {
-  //   return {
-  //     challengeDetails: this.props.challengeJson
-  //   }
-  // },
+  getInitialState: function() {
+    var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    return {
+      challenges: ds.cloneWithRows(this.props.challengeJson.data)
+    }
+  },
 
   render: function() {
-    console.log(this.props.challengeJson);
+    console.log(this.props.challengeJson.data[0].attributes.title);
+    console.log(this.state.challenges);
+
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
           Challenges
         </Text>
         <View style={styles.messageBox}>
-          <Text style={styles.subtitle}>{this.props.challengeJson.data[0].attributes.title}</Text>
+          <ListView
+            dataSource={this.state.challenges}
+            renderRow= {(rowData) => <TouchableHighlight
+                style={styles.touchableHighlight}
+                onPress={this._onViewChallenge}>
+                <Text style={styles.buttonText}>{rowData.attributes.title}</Text>
+              </TouchableHighlight>}
+          />
         </View>
         <TouchableHighlight
           style={styles.createChallengeButton}
@@ -39,10 +50,16 @@ var ChallengesView = React.createClass({
     );
   },
 
-  _showChallenges: function() {
-    for(var i = 0; i < this.props.challengeJson.data.length(); i++) {
-
-    }
+  _onViewChallenge: function () {
+    return (
+      Alert.alert(
+        "Hello world",
+        'You suck',
+        [
+          {text: 'OK'}
+        ]
+      )
+    )
   },
 
   _onCreateChallenge: function() {
