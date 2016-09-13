@@ -55,7 +55,7 @@ var ChallengesView = React.createClass({
     this.props.navigator.push({
       name: 'Single Challenge',
       passProps: {
-        message: "View single challenge"
+        challenge: this.props.challengeJson.data[0]
       }
     });
   },
