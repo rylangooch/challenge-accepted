@@ -103,6 +103,7 @@ exports[`test renders correctly 1`] = `
               Object {
                 "color": "#FFFFFF",
                 "fontSize": 17,
+                "fontStyle": "italic",
                 "marginTop": 4,
                 "textAlign": "center"
               }
