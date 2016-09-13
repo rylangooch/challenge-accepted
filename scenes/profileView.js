@@ -48,7 +48,7 @@ var ProfileView = React.createClass({
     })
     .then((response) => response.json())
     .then((responseJson) => {
-      console.log(responseJson);
+      // console.log(responseJson);
       this.props.navigator.push({
         name: 'Challenges',
         passProps: {

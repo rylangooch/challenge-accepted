@@ -22,9 +22,6 @@ var ChallengesView = React.createClass({
   },
 
   render: function() {
-    console.log(this.props.challengeJson.data[0].attributes.title);
-    console.log(this.state.challenges);
-
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
@@ -55,12 +52,23 @@ var ChallengesView = React.createClass({
   },
 
   _onViewChallenge: function (rowData) {
-    this.props.navigator.push({
-      name: 'Single Challenge',
-      passProps: {
-        challenge: rowData
+    fetch(rowData.relationships.comments.links.related, {
+      method: "GET",
+      headers: {
+        'Accept': 'application/vnd.api+json',
+        'Content-Type': 'application/vnd.api+json',
       }
-    });
+    })
+    .then((response) => response.json())
+    .then((responseJson) => {
+      this.props.navigator.push({
+        name: 'Single Challenge',
+        passProps: {
+          challenge: rowData,
+          commentJson: responseJson
+        }
+      });
+    })
   },
 
   _onCreateChallenge: function() {

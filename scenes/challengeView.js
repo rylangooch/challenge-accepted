@@ -12,7 +12,10 @@ import {
 var styles = require("../components/styles");
 
 var ChallengeView = React.createClass({
+
   render: function() {
+    console.log(this.props.commentJson);
+
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
@@ -25,7 +28,8 @@ var ChallengeView = React.createClass({
         </View>
       </View>
     )
-  }
+  },
+
 });
 
 module.exports = ChallengeView;
