@@ -19,7 +19,8 @@ const styles = StyleSheet.create({
   },
   title: {
     marginTop:4,
-    fontSize:16
+    fontSize:16,
+    fontWeight: 'bold'
   },
   leftNavButtonText: {
     fontSize: 18,
@@ -62,6 +63,7 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 17,
+    fontStyle: 'italic',
     textAlign: 'center',
     marginTop: 4,
     color: '#FFFFFF',
