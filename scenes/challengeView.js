@@ -17,13 +17,12 @@ var ChallengeView = React.createClass({
   getInitialState: function() {
     var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     return {
-      comments: ds.cloneWithRows(this._getComments()),
-      comments2: {}
+      comments: ds.cloneWithRows(this.props.commentJson.data)
     }
   },
 
-  componentWillMount(){
-    this.setState({comments2: this._getComments()})
+  componentWillMount: function() {
+    this.setState({comments2: "this._getComments()"})
   },
 
   render: function() {
