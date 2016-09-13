@@ -10,17 +10,45 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
-var NewChallengeView = React.createClass({
+import DropDown, {
+  Select,
+  Option,
+  OptionList,
+} from 'react-native-selectme';
 
+var NewChallengeView = React.createClass({
   getInitialState() {
     return {
       challengeTitle: '',
       challengeDescription: '',
-      challengeAnte: ''
+      challengeAnte: '',
+      friend: ''
     }
   },
 
+  _getOptionList() {
+    return this.refs['OPTIONLIST'];
+  },
+
+  _friend(user) {
+   this.setState({
+       ...this.state,
+       friend: user
+     });
+   },
+
+  _createUserList() {
+    var list = [];
+    for(var i = 0; i < this.props.userList.length; i++) {
+      list.push("<Option>" + this.props.userList[i].nickname + "</Option>")
+    }
+    return list;
+  },
+
   render: function() {
+    console.log(this.props.userList);
+    var hello = this._createUserList();
+    console.log(hello);
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
@@ -48,6 +76,17 @@ var NewChallengeView = React.createClass({
           value={this.state.challengeAnte}
           onChange={(event) => this.setState({challengeAnte: event.nativeEvent.text})}>
         </TextInput>
+
+          <Select
+          style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFF' }}
+          optionListRef={this._getOptionList.bind(this)}
+          defaultValue="Select a friend to challenge"
+          onSelect={this._friend.bind(this)}>
+            <Option>{this.props.userList[0].nickname}</Option>
+            <Option>{this.props.userList[1].nickname}</Option>
+          </Select>
+
+          <OptionList ref="OPTIONLIST"/>
 
         <TouchableHighlight underlayColor='#949494' style={styles.button} onPress={this._viewFormSubmit}>
           <Text style={styles.buttonText}>
