@@ -7,16 +7,21 @@ import {
   Image,
   TouchableHighlight,
   Alert,
+  ListView,
+  ScrollView
 } from 'react-native';
 
 var styles = require("../components/styles");
 
 var ChallengeView = React.createClass({
+  getInitialState: function() {
+    var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    return {
+      comments: ds.cloneWithRows(this.props.commentJson.data)
+    }
+  },
 
   render: function() {
-    // console.log(this.props.challenge.id);
-    // console.log(this.props.commentJson.data[0].attributes.message);
-
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
@@ -29,9 +34,10 @@ var ChallengeView = React.createClass({
           <Text style={styles.heading}>
             Comments
           </Text>
-          <Text style={styles.subtitle}>
-            {this.props.commentJson.data[0].attributes.message}
-          </Text>
+          <ListView
+            dataSource={this.state.comments}
+            renderRow= {(rowData) => this._renderRow(rowData)}
+          />
         </View>
         <TouchableHighlight
           style={styles.createChallengeButton}
@@ -40,6 +46,14 @@ var ChallengeView = React.createClass({
           <Text>New Comment</Text>
         </TouchableHighlight>
       </View>
+    )
+  },
+
+  _renderRow: function(rowData) {
+    return (
+      <Text style={styles.subtitle}>
+        {rowData.attributes.message}
+      </Text>
     )
   },
 

@@ -45,7 +45,10 @@ var ChallengesView = React.createClass({
 
   _renderRow: function(rowData) {
     return (
-      <TouchableHighlight style={styles.touchableHighlight} onPress={()=> this._onViewChallenge(rowData)}>
+      <TouchableHighlight
+        style={styles.touchableHighlight}
+        underlayColor='#949494'
+        onPress={()=> this._onViewChallenge(rowData)}>
           <Text style={styles.buttonText}>{rowData.attributes.title}</Text>
       </TouchableHighlight>
     )
