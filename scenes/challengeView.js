@@ -14,8 +14,8 @@ var styles = require("../components/styles");
 var ChallengeView = React.createClass({
 
   render: function() {
-    console.log(this.props.commentJson);
-    console.log(this.props.commentJson.data[0].attributes.message);
+    // console.log(this.props.commentJson);
+    // console.log(this.props.commentJson.data[0].attributes.message);
 
     return (
       <View style={styles.container}>
@@ -33,8 +33,23 @@ var ChallengeView = React.createClass({
             {this.props.commentJson.data[0].attributes.message}
           </Text>
         </View>
+        <TouchableHighlight
+          style={styles.createChallengeButton}
+          underlayColor='#949494'
+          onPress={this._onCreateComment}>
+          <Text>New Comment</Text>
+        </TouchableHighlight>
       </View>
     )
+  },
+
+  _onCreateComment: function() {
+    this.props.navigator.push({
+      name: 'New Comment',
+      passProps: {
+        message: "Make a comment my friend"
+      }
+    });
   },
 
 });

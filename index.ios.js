@@ -11,6 +11,7 @@ var ProfileView = require('./scenes/profileView');
 var ChallengeView = require('./scenes/challengeView');
 var ChallengesView = require('./scenes/challengesView');
 var NewChallengeView = require('./scenes/newChallengeView');
+var NewCommentView = require('./scenes/newCommentView');
 var styles = require('./components/styles');
 
  var {
@@ -54,6 +55,9 @@ var styles = require('./components/styles');
     }
     if (route.name == "Single Challenge") {
       return <ChallengeView navigator={navigator} {...route.passProps} />
+    }
+    if (route.name == "New Comment") {
+      return <NewCommentView navigator={navigator} {...route.passProps} />
     }
   }
 })
