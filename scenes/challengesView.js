@@ -11,6 +11,7 @@ import {
   ScrollView
 } from 'react-native';
 
+var credentials = require("../environment");
 var styles = require("../components/styles");
 
 var ChallengesView = React.createClass({
@@ -22,9 +23,6 @@ var ChallengesView = React.createClass({
   },
 
   render: function() {
-    console.log(this.props.challengeJson.data[0].attributes.title);
-    console.log(this.state.challenges);
-
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
@@ -64,13 +62,26 @@ var ChallengesView = React.createClass({
   },
 
   _onCreateChallenge: function() {
-    this.props.navigator.push({
-      name: 'New Challenge',
-      passProps: {
-        message: "Make a challenge my friend"
+    fetch(credentials.url + "/api/v2/users", {
+      method: "GET",
+      headers: {
+        "Authorization": credentials.token,
+        'Accept': 'application/vnd.api+json',
+        'Content-Type': 'application/vnd.api+json',
       }
-    });
-  },
+    })
+    .then((response) => response.json())
+    .then((responseJson) => {
+      this.props.navigator.push({
+        name: 'New Challenge',
+        passProps: {
+          message: "Make a challenge my friend",
+          userList: responseJson
+        }
+      });
+    })
+  }
 });
+
 
 module.exports = ChallengesView;
