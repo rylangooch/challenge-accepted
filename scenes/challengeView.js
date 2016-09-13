@@ -17,11 +17,19 @@ var ChallengeView = React.createClass({
   getInitialState: function() {
     var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     return {
-      comments: ds.cloneWithRows(this.props.commentJson.data)
+      comments: ds.cloneWithRows(this._getComments()),
+      comments2: {}
     }
   },
 
+  componentWillMount(){
+    this.setState({comments2: this._getComments()})
+  },
+
   render: function() {
+    console.log("*******");
+    console.log(this.state.comments2);
+    console.log("*******");
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
@@ -55,6 +63,24 @@ var ChallengeView = React.createClass({
         {rowData.attributes.message}
       </Text>
     )
+  },
+
+  _getComments: function() {
+    return fetch(this.props.challenge.relationships.comments.links.related, {
+      method: "GET",
+      headers: {
+        'Accept': 'application/vnd.api+json',
+        'Content-Type': 'application/vnd.api+json',
+      }
+    })
+    .then((response) => response.json())
+    .then((responseJson) => {
+      console.log(responseJson);
+      return responseJson.data;
+    })
+    .catch((error) => {
+      console.error(error);
+    });
   },
 
   _onCreateComment: function() {
