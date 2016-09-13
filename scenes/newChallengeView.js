@@ -82,9 +82,7 @@ var NewChallengeView = React.createClass({
           defaultValue="Select a friend to challenge"
           onSelect={this._friend.bind(this)}>
           {this.props.userList.map((list) => {
-            {console.log(list.email)}
-            return <Option> {list.nickname} </Option>
-
+            return <Option value = {{userId: list.user_id}}> {list.nickname} </Option>
           })}
           </Select>
 
@@ -103,6 +101,7 @@ var NewChallengeView = React.createClass({
     let title       = this.state.challengeTitle;
     let description = this.state.challengeDescription;
     let ante        = this.state.challengeAnte;
+    let userId      = this.state.friend.userId;
 
     if (title == "" || description == "" || ante == "") {
       Alert.alert(
