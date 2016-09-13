@@ -52,6 +52,7 @@ var ProfileView = React.createClass({
       this.props.navigator.push({
         name: 'Challenges',
         passProps: {
+          userId: this.props.profile.userId,
           challengeJson: responseJson
         }
       });
@@ -67,42 +68,14 @@ var ProfileView = React.createClass({
   },
 
   _onCreateChallenge: function() {
+    console.log(this.props.profile.userId)
     this.props.navigator.push({
       name: 'New Challenge',
       passProps: {
-        message: "Make a challenge my friend"
+        userId: this.props.profile.userId
       }
     });
   },
-
-  // _onCallApi: function() {
-  //   fetch('http://localhost:3000/challenges', {
-  //     method: "GET",
-  //     headers: {
-  //       'Authorization': 'Bearer ' + this.props.token.idToken
-  //       'Accept': 'application/vnd.api+json',
-  //       'Content-Type': 'application/vnd.api+json',
-  //     }
-  //   })
-  //   .then((response) => response.json())
-  //   .then((responseJson) => {
-  //     this.props.navigator.push({
-  //       name: 'Challenges',
-  //       passProps: {
-  //         challenges: responseJson
-  //       }
-  //     });
-  //   })
-  //   .catch((error) => {
-  //     Alert.alert(
-  //       'List Retrieval Failed',
-  //       'Oops',
-  //       [
-  //         {text: 'OK'},
-  //       ]
-  //     )
-  //   });
-  // },
 });
 
 module.exports = ProfileView;

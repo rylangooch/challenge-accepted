@@ -24,7 +24,7 @@ var NewChallengeView = React.createClass({
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
-          New Challenge
+          New Challenge for {this.props.user_id}
         </Text>
 
         <TextInput
@@ -87,7 +87,7 @@ var NewChallengeView = React.createClass({
             "title": title,
             "description": description,
             "ante": ante,
-            "user-id": 1
+            "owner": this.props.userId
           }
         }]
       })

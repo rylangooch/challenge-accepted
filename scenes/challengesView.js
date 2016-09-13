@@ -64,10 +64,11 @@ var ChallengesView = React.createClass({
   },
 
   _onCreateChallenge: function() {
+    console.log(this.props.userId)
     this.props.navigator.push({
       name: 'New Challenge',
       passProps: {
-        message: "Make a challenge my friend"
+        userId: this.props.userId
       }
     });
   },
