@@ -60,12 +60,15 @@ var styles = require('./components/styles');
 
 var NavigationBarRouteMapper = {
    LeftButton(route, navigator, index, navState) {
+     var button
+     (index === 1) ? button = "Logout" : button = "Back";
+
      if(index > 0) {
        return (
          <TouchableHighlight
            underlayColor="transparent"
            onPress={() => { if (index > 0) { navigator.pop() } }}>
-           <Text style={ styles.leftNavButtonText }>Back</Text>
+           <Text style={ styles.leftNavButtonText }>{button}</Text>
          </TouchableHighlight>)
      }
      else { return null }
