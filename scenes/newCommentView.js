@@ -19,6 +19,8 @@ var NewCommentView = React.createClass({
   },
 
   render: function() {
+    console.log(this.props.challengeId);
+
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
@@ -43,7 +45,8 @@ var NewCommentView = React.createClass({
   },
 
   _commentSubmit: function() {
-    let comment = this.state.commentMessage;
+    let comment     = this.state.commentMessage;
+    let challengeId = this.props.challengeId;
 
     if (comment == "" ) {
       Alert.alert(
@@ -67,7 +70,7 @@ var NewCommentView = React.createClass({
           "type": "comments",
           "attributes": {
             "user-id": 1,
-            "challenge-id": 1,
+            "challenge-id": challengeId,
             "message": comment
           }
         }]

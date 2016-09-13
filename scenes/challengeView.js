@@ -14,7 +14,7 @@ var styles = require("../components/styles");
 var ChallengeView = React.createClass({
 
   render: function() {
-    // console.log(this.props.commentJson);
+    // console.log(this.props.challenge.id);
     // console.log(this.props.commentJson.data[0].attributes.message);
 
     return (
@@ -47,7 +47,8 @@ var ChallengeView = React.createClass({
     this.props.navigator.push({
       name: 'New Comment',
       passProps: {
-        message: "Make a comment my friend"
+        message: "Make a comment my friend",
+        challengeId: this.props.challenge.id
       }
     });
   },
