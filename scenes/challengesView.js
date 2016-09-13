@@ -35,6 +35,7 @@ var ChallengesView = React.createClass({
             dataSource={this.state.challenges}
             renderRow= {(rowData) => <TouchableHighlight
                 style={styles.touchableHighlight}
+                underlayColor='#949494'
                 onPress={this._onViewChallenge}>
                 <Text style={styles.buttonText}>{rowData.attributes.title}</Text>
               </TouchableHighlight>}
@@ -51,15 +52,12 @@ var ChallengesView = React.createClass({
   },
 
   _onViewChallenge: function () {
-    return (
-      Alert.alert(
-        "Hello world",
-        'You suck',
-        [
-          {text: 'OK'}
-        ]
-      )
-    )
+    this.props.navigator.push({
+      name: 'Single Challenge',
+      passProps: {
+        message: "View single challenge"
+      }
+    });
   },
 
   _onCreateChallenge: function() {
