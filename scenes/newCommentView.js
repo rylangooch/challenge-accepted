@@ -19,8 +19,6 @@ var NewCommentView = React.createClass({
   },
 
   render: function() {
-    console.log(this.props.challengeId);
-
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>

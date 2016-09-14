@@ -105,12 +105,7 @@ var NewChallengeView = React.createClass({
       }
     })
     .catch((error) => {
-      Alert.alert(
-        "Failed to create challenge",
-        [
-          {text: 'OK'},
-        ]
-      )
+      console.error(error);
     })
   }
 });
