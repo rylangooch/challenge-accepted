@@ -37,17 +37,8 @@ var NewChallengeView = React.createClass({
      });
    },
 
-  // _createUserList() {
-  //   var list = [];
-  //   for(var i = 0; i < this.props.userList.length; i++) {
-  //     list.push("<Option>" + this.props.userList[i].nickname + "</Option>")
-  //   }
-  //   return list;
-  // },
-
-
   render: function() {
-
+    console.log(this.state.friend);
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
@@ -127,7 +118,8 @@ var NewChallengeView = React.createClass({
             "title": title,
             "description": description,
             "ante": ante,
-            "owner": userId
+            "owner": userId,
+            "challengers": [userId, this.state.friend.userId]
           }
         }]
       })

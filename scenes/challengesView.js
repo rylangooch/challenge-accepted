@@ -49,6 +49,7 @@ var ChallengesView = React.createClass({
     this.props.navigator.push({
       name: 'Single Challenge',
       passProps: {
+        profile: this.props.profile,
         challenge: rowData
       }
     });
