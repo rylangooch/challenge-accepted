@@ -21,14 +21,7 @@ var ChallengeView = React.createClass({
     }
   },
 
-  componentWillMount: function() {
-    this.setState({comments2: "this._getComments()"})
-  },
-
   render: function() {
-    console.log("*******");
-    console.log(this.state.comments2);
-    console.log("*******");
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
@@ -74,7 +67,6 @@ var ChallengeView = React.createClass({
     })
     .then((response) => response.json())
     .then((responseJson) => {
-      console.log(responseJson);
       return responseJson.data;
     })
     .catch((error) => {
