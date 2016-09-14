@@ -27,20 +27,21 @@ var ChallengeView = React.createClass({
           {this.props.challenge.attributes.title}
         </Text>
         <View style={styles.messageBox}>
-          <Text style={styles.heading}>
+          <Text style={styles.description}>
             {this.props.challenge.attributes.description}
           </Text>
         </View>
         <View style={styles.messageBox}>
-          <Text style={styles.heading}>
-            {this.state.winner}
-          </Text>
+          <View>
+            <Text style={styles.winnerTitle}>Winner</Text>
+            <Text style={styles.subtitle}>{this.state.winner}</Text>
+          </View>
         </View>
         <TouchableHighlight
-          style={styles.callApiButton}
+          style={styles.mainButton}
           underlayColor='#949494'
           onPress={this._onCompleteChallenge}>
-          <Text>Set Victor</Text>
+          <Text style={styles.mainButtonText}>Set Victor</Text>
         </TouchableHighlight>
       </View>
     )

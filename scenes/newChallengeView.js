@@ -67,20 +67,20 @@ var NewChallengeView = React.createClass({
           onChange={(event) => this.setState({challengeAnte: event.nativeEvent.text})}>
         </TextInput>
 
-          <Select
-          style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFF' }}
+        <Select
+          style={styles.dropDown}
           optionListRef={this._getOptionList.bind(this)}
           defaultValue="Select a friend to challenge"
           onSelect={this._friend.bind(this)}>
           {this.props.userList.map((list) => {
             return <Option value = {{userId: list.user_id}}> {list.nickname} </Option>
           })}
-          </Select>
+        </Select>
 
-          <OptionList ref="OPTIONLIST"/>
+        <OptionList ref="OPTIONLIST"/>
 
-        <TouchableHighlight underlayColor='#949494' style={styles.button} onPress={this._viewFormSubmit}>
-          <Text style={styles.buttonText}>
+        <TouchableHighlight underlayColor='#949494' style={styles.mainButton} onPress={this._viewFormSubmit}>
+          <Text style={styles.mainButtonText}>
             Create Challenge
           </Text>
         </TouchableHighlight>

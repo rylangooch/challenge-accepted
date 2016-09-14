@@ -38,14 +38,21 @@ var ChallengesView = React.createClass({
   },
 
   _renderRow: function(rowData) {
+    if (rowData.attributes.description.length >= 45) {
+      var dots = "..."
+    } else {
+      var dots = ""
+    }
     return (
-      <TouchableHighlight style={styles.touchableHighlight} onPress={()=> this._onViewChallenge(rowData)}>
-          <Text style={styles.mainButtonText}>
-            {rowData.attributes.title}
-            <Text style={styles.mainButtonText}>
-              {rowData.attributes.description}
+      <TouchableHighlight style={styles.touchableHighlight} underlayColor='#949494' onPress={()=> this._onViewChallenge(rowData)}>
+          <View>
+            <Text style={styles.touchableHighlightTitle}>
+              {rowData.attributes.title}
             </Text>
-          </Text>
+            <Text style={styles.touchableHighlightDescription}>
+              {rowData.attributes.description.substring(0,45) + dots}
+            </Text>
+          </View>
       </TouchableHighlight>
     )
   },
