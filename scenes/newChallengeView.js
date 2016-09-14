@@ -62,7 +62,7 @@ var NewChallengeView = React.createClass({
     let title       = this.state.challengeTitle;
     let description = this.state.challengeDescription;
     let ante        = this.state.challengeAnte;
-
+    let userId      = this.props.userId
     if (title == "" || description == "" || ante == "") {
       Alert.alert(
         "Error",
@@ -87,7 +87,7 @@ var NewChallengeView = React.createClass({
             "title": title,
             "description": description,
             "ante": ante,
-            "owner": this.props.userId
+            "owner": userId
           }
         }]
       })
