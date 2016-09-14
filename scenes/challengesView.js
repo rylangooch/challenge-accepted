@@ -40,7 +40,12 @@ var ChallengesView = React.createClass({
   _renderRow: function(rowData) {
     return (
       <TouchableHighlight style={styles.touchableHighlight} onPress={()=> this._onViewChallenge(rowData)}>
-          <Text style={styles.buttonText}>{rowData.attributes.title}</Text>
+          <Text style={styles.mainButtonText}>
+            {rowData.attributes.title}
+            <Text style={styles.mainButtonText}>
+              {rowData.attributes.description}
+            </Text>
+          </Text>
       </TouchableHighlight>
     )
   },

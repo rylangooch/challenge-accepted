@@ -99,14 +99,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  callApiButton: {
+  mainButton: {
     height: 50,
     alignSelf: 'stretch',
-    backgroundColor: '#FFF',
+    backgroundColor: '#639FAB',
     margin: 10,
     borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  mainButtonText: {
+    color: '#ffffff',
   },
   image: {
     flex: 3,
@@ -118,11 +121,14 @@ const styles = StyleSheet.create({
   signInButton: {
     height: 50,
     alignSelf: 'stretch',
-    backgroundColor: '#FFF',
+    backgroundColor: '#639FAB',
     margin: 10,
     borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  signInButtonText: {
+    color: '#ffffff',
   },
   input: {
     height: 50,
@@ -157,7 +163,7 @@ const styles = StyleSheet.create({
   },
   touchableHighlight: {
     height: 60,
-    backgroundColor: '#FFF',
+    backgroundColor: '#639FAB',
     borderBottomWidth:1,
     borderBottomColor: '#15204C',
     flexDirection:'row',

@@ -24,16 +24,16 @@ var ProfileView = React.createClass({
         <Text style={styles.welcomeTitle}>Welcome {this.props.profile.email}</Text>
         </View>
         <TouchableHighlight
-          style={styles.callApiButton}
+          style={styles.mainButton}
           underlayColor='#949494'
           onPress={this._onViewChallenges}>
-          <Text>View Challenges</Text>
+          <Text style={styles.mainButtonText}>View Challenges</Text>
         </TouchableHighlight>
         <TouchableHighlight
-          style={styles.createChallengeButton}
+          style={styles.mainButton}
           underlayColor='#949494'
           onPress={this._onCreateChallenge}>
-          <Text>New Challenge</Text>
+          <Text style={styles.mainButtonText}>New Challenge</Text>
         </TouchableHighlight>
       </View>
     );
