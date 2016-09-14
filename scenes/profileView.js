@@ -52,6 +52,7 @@ var ProfileView = React.createClass({
       this.props.navigator.push({
         name: 'Challenges',
         passProps: {
+          userId: this.props.profile.userId,
           challengeJson: responseJson
         }
       });
@@ -80,7 +81,7 @@ var ProfileView = React.createClass({
       this.props.navigator.push({
         name: 'New Challenge',
         passProps: {
-          message: "Make a challenge my friend",
+          userId: this.props.profile.userId,
           userList: responseJson
         }
       });

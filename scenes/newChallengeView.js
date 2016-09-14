@@ -51,7 +51,7 @@ var NewChallengeView = React.createClass({
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
-          New Challenge
+          New Challenge for {this.props.user_id}
         </Text>
 
         <TextInput
@@ -101,7 +101,7 @@ var NewChallengeView = React.createClass({
     let title       = this.state.challengeTitle;
     let description = this.state.challengeDescription;
     let ante        = this.state.challengeAnte;
-    let userId      = this.state.friend.userId;
+    let userId      = this.props.userId
 
     if (title == "" || description == "" || ante == "") {
       Alert.alert(
@@ -127,7 +127,7 @@ var NewChallengeView = React.createClass({
             "title": title,
             "description": description,
             "ante": ante,
-            "user-id": userID
+            "owner": userId
           }
         }]
       })
