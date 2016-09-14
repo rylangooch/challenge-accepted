@@ -7,11 +7,19 @@ import {
   Image,
   TouchableHighlight,
   Alert,
+  AlertIOS,
 } from 'react-native';
 
 var styles = require("../components/styles");
+var credentials = require("../environment");
 
 var ChallengeView = React.createClass({
+  getInitialState: function() {
+    return {
+      winner: "No winner yet!"
+    }
+  },
+
   render: function() {
     return (
       <View style={styles.container}>
@@ -23,8 +31,41 @@ var ChallengeView = React.createClass({
             {this.props.challenge.attributes.description}
           </Text>
         </View>
+        <View style={styles.messageBox}>
+          <Text style={styles.heading}>
+            {this.state.winner}
+          </Text>
+        </View>
+        <TouchableHighlight
+          style={styles.callApiButton}
+          underlayColor='#949494'
+          onPress={this._onCompleteChallenge}>
+          <Text>Set Victor</Text>
+        </TouchableHighlight>
       </View>
     )
+  },
+
+  _onCompleteChallenge: function () {
+    fetch(credentials.url + "/api/v2/users/" + this.props.challenge.attributes.challengers[1], {
+      method: "GET",
+      headers: {
+        "Authorization": credentials.token,
+        'Accept': 'application/vnd.api+json',
+        'Content-Type': 'application/vnd.api+json',
+      }
+    })
+    .then((response) => response.json())
+    .then((responseJson) => {
+      AlertIOS.alert(
+        this.props.challenge.attributes.title,
+        "Who won?",
+        [
+          {text: this.props.profile.nickname, onPress: () => this.setState({ winner: this.props.profile.nickname })},
+          {text: responseJson.nickname, onPress: () => this.setState({ winner: responseJson.nickname })}
+        ]
+      )
+    })
   }
 });
 

@@ -80,7 +80,6 @@ var NavigationBarRouteMapper = {
 
    Title(route, navigator, index, navState) {
      return null
-    //  return <Text style={ styles.title }>ChallengeAccepted</Text>
    }
  };
 
