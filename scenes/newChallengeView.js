@@ -68,6 +68,7 @@ var NewChallengeView = React.createClass({
         </TextInput>
 
         <Select
+          width={355}
           style={styles.dropDown}
           optionListRef={this._getOptionList.bind(this)}
           defaultValue="Select a friend to challenge"
