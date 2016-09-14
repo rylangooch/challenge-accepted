@@ -21,27 +21,38 @@ var ChallengeView = React.createClass({
   },
 
   render: function() {
+    var displayWinner;
+    var displayWinnerTitle;
+    var displayWinnerButton;
+    if (this.state.winner) {
+      displayWinnerTitle = <Text style={styles.winnerTitle}>Winner</Text>;
+      displayWinner = <Text style={styles.subtitle}>{this.state.winner}</Text>;
+    } else {
+      displayWinnerButton = <TouchableHighlight
+        style={styles.mainButton}
+        underlayColor='#949494'
+        onPress={this._onCompleteChallenge}>
+        <Text style={styles.mainButtonText}>Set Victor</Text>
+      </TouchableHighlight>;
+    }
+
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
           {this.props.challenge.attributes.title}
         </Text>
         <View style={styles.messageBox}>
-          <Text style={styles.heading}>
+          <Text style={styles.description}>
             {this.props.challenge.attributes.description}
           </Text>
         </View>
         <View style={styles.messageBox}>
-          <Text style={styles.heading}>
-            {this.state.winner}
-          </Text>
+          <View>
+            {displayWinnerTitle}
+            {displayWinner}
+          </View>
         </View>
-        <TouchableHighlight
-          style={styles.callApiButton}
-          underlayColor='#949494'
-          onPress={this._onCompleteChallenge}>
-          <Text>Set Victor</Text>
-        </TouchableHighlight>
+          {displayWinnerButton}
       </View>
     )
   },

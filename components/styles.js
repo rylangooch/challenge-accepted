@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
   messageBox: {
     flex: 1,
     justifyContent: 'center',
+    margin: 10,
   },
   challengeList: {
     flex: 6,
@@ -99,14 +100,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  callApiButton: {
+  mainButton: {
     height: 50,
     alignSelf: 'stretch',
-    backgroundColor: '#FFF',
+    backgroundColor: '#639FAB',
     margin: 10,
     borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  mainButtonText: {
+    color: '#ffffff',
   },
   image: {
     flex: 3,
@@ -118,11 +122,14 @@ const styles = StyleSheet.create({
   signInButton: {
     height: 50,
     alignSelf: 'stretch',
-    backgroundColor: '#FFF',
+    backgroundColor: '#639FAB',
     margin: 10,
     borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  signInButtonText: {
+    color: '#ffffff',
   },
   input: {
     height: 50,
@@ -146,6 +153,17 @@ const styles = StyleSheet.create({
     borderColor: '#FFF',
     backgroundColor: '#FFF'
   },
+  dropDown: {
+    fontSize: 14,
+    height: 50,
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#FFF',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#FFF',
+    margin: 10,
+  },
   button: {
     height: 50,
     alignSelf: 'stretch',
@@ -156,13 +174,29 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   touchableHighlight: {
-    height: 60,
-    backgroundColor: '#FFF',
+    padding: 10,
+    marginLeft: 10,
+    marginRight: 10,
+    marginBottom: 10,
+    borderRadius: 5,
+    backgroundColor: '#639FAB',
     borderBottomWidth:1,
     borderBottomColor: '#15204C',
     flexDirection:'row',
-    justifyContent: 'center',
-    alignItems: 'center'
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  touchableHighlightTitle: {
+    color: '#ffffff',
+    fontWeight: '600',
+    fontSize: 18,
+    marginBottom: 10,
+  },
+  touchableHighlightDescription: {
+    color: '#f2f2f2',
+    fontSize: 14,
+    alignSelf: 'center',
+    flexWrap: 'wrap'
   },
   buttonText: {
     fontSize: 15,
@@ -174,6 +208,21 @@ const styles = StyleSheet.create({
     fontWeight: '300',
     marginTop: 100,
     marginBottom: 40,
+    alignSelf: 'center',
+    color: '#FFF'
+  },
+  winnerTitle: {
+    fontSize: 24,
+    fontWeight: '300',
+    marginTop: 100,
+    marginBottom: 5,
+    alignSelf: 'center',
+    color: '#FFF'
+  },
+  description: {
+    fontSize: 22,
+    fontWeight: '400',
+    marginTop: 40,
     alignSelf: 'center',
     color: '#FFF'
   },
