@@ -127,7 +127,7 @@ var NewChallengeView = React.createClass({
             "title": title,
             "description": description,
             "ante": ante,
-            "user-id": 1
+            "user-id": userID
           }
         }]
       })
