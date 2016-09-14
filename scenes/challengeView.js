@@ -16,7 +16,7 @@ var credentials = require("../environment");
 var ChallengeView = React.createClass({
   getInitialState: function() {
     return {
-      winner: "No winner yet!"
+      winner: this.props.challenge.attributes.winner
     }
   },
 
@@ -61,10 +61,33 @@ var ChallengeView = React.createClass({
         this.props.challenge.attributes.title,
         "Who won?",
         [
-          {text: this.props.profile.nickname, onPress: () => this.setState({ winner: this.props.profile.nickname })},
-          {text: responseJson.nickname, onPress: () => this.setState({ winner: responseJson.nickname })}
+          {text: this.props.profile.nickname, onPress: () => this._setWinner(this.props.profile.nickname)},
+          {text: responseJson.nickname, onPress: () => this._setWinner(responseJson.nickname)}
         ]
       )
+    })
+  },
+
+  _setWinner: function(winner) {
+    fetch("http://localhost:3000/challenges/" + this.props.challenge.id, {
+      method: "PATCH",
+      headers: {
+        'Accept': 'application/vnd.api+json',
+        'Content-Type': 'application/vnd.api+json',
+      },
+      body: JSON.stringify({
+        data: {
+          "id": this.props.challenge.id,
+          "type": "challenges",
+          "attributes": {
+            "winner": winner
+          }
+        }
+      })
+    })
+    .then((response) => response.json())
+    .then((responseJson) => {
+      this.setState({ winner: winner })
     })
   }
 });
