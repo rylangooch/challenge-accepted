@@ -22,9 +22,6 @@ var ChallengesView = React.createClass({
   },
 
   render: function() {
-    console.log(this.props.challengeJson.data[0].attributes.title);
-    console.log(this.state.challenges);
-
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
@@ -36,12 +33,6 @@ var ChallengesView = React.createClass({
             renderRow= {(rowData) => this._renderRow(rowData)}
           />
         </View>
-        <TouchableHighlight
-          style={styles.createChallengeButton}
-          underlayColor='#949494'
-          onPress={this._onCreateChallenge}>
-          <Text>New Challenge</Text>
-        </TouchableHighlight>
       </View>
     );
   },
@@ -61,16 +52,6 @@ var ChallengesView = React.createClass({
         challenge: rowData
       }
     });
-  },
-
-  _onCreateChallenge: function() {
-    this.props.navigator.push({
-      name: 'New Challenge',
-      passProps: {
-        message: "Make a challenge my friend"
-      }
-    });
-  },
+  }
 });
-
 module.exports = ChallengesView;
