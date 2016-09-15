@@ -12,12 +12,13 @@ import {
 } from 'react-native';
 
 var styles = require("../components/styles");
+var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
 var ChallengesView = React.createClass({
   getInitialState: function() {
-    var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    console.log('initial');
     return {
-      challenges: ds.cloneWithRows(this.props.challengeJson.data)
+      challenges: ds.cloneWithRows(this.props.challengesArray)
     }
   },
 
