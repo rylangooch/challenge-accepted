@@ -97,6 +97,7 @@ var ProfileView = React.createClass({
         name: 'New Challenge',
         passProps: {
           userId: this.props.profile.userId,
+          username: this.props.profile.nickname,
           userList: responseJson
         }
       });
