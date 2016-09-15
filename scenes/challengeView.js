@@ -37,7 +37,7 @@ var ChallengeView = React.createClass({
         style={styles.mainButton}
         underlayColor='#949494'
         onPress={this._onCompleteChallenge}>
-        <Text style={styles.mainButtonText}>Set Victor</Text>
+        <Text style={styles.mainButtonText}>Set Winner</Text>
       </TouchableHighlight>;
     }
     var ownerIcon = <Image style={styles.ownerIcon} source={{uri: this.state.ownerIcon}} />;
@@ -55,16 +55,12 @@ var ChallengeView = React.createClass({
           <Text style={styles.versus}> VS </Text>
           {challengerIcon}
         </View>
-        <View style={styles.playerIcons}>
-          {ownerName}
-          {challengerName}
-        </View>
         <View style={styles.messageBox}>
           <Text style={styles.description}>
             {this.props.challenge.attributes.description}
           </Text>
         </View>
-        <View style={styles.messageBox}>
+        <View style={styles.winnerBox}>
           <View>
             {displayWinnerTitle}
             {displayWinner}
@@ -76,26 +72,15 @@ var ChallengeView = React.createClass({
   },
 
   _onCompleteChallenge: function () {
-    fetch(credentials.url + "/api/v2/users/" + this.props.challenge.attributes.challenger, {
-      method: "GET",
-      headers: {
-        "Authorization": credentials.token,
-        'Accept': 'application/vnd.api+json',
-        'Content-Type': 'application/vnd.api+json',
-      }
-    })
-    .then((response) => response.json())
-    .then((responseJson) => {
       AlertIOS.alert(
         this.props.challenge.attributes.title,
         "Who won?",
         [
-          {text: this.props.profile.nickname, onPress: () => this._setWinner(this.props.profile.nickname)},
-          {text: responseJson.nickname, onPress: () => this._setWinner(responseJson.nickname)}
+          {text: this.state.ownerName, onPress: () => this._setWinner(this.state.ownerName)},
+          {text: this.state.challengerName, onPress: () => this._setWinner(this.state.challengerName)}
         ]
       )
-    })
-  },
+    },
 
   _setWinner: function(winner) {
     fetch("http://localhost:3000/challenges/" + this.props.challenge.id, {

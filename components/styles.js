@@ -51,6 +51,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  playerNicknameContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+  playerNickname1: {
+
+  },
+  playerNickname2: {
+
+  },
   challengeList: {
     flex: 6,
     justifyContent: 'center',
@@ -257,6 +269,11 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     alignSelf: 'center',
     color: '#FFF'
+  },
+  winnerBox: {
+    flex: 1,
+    justifyContent: 'center',
+    marginBottom: 100,
   },
   description: {
     fontSize: 22,
