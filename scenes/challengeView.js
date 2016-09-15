@@ -58,7 +58,7 @@ var ChallengeView = React.createClass({
   },
 
   _onCompleteChallenge: function () {
-    fetch(credentials.url + "/api/v2/users/" + this.props.challenge.attributes.challengers[1], {
+    fetch(credentials.url + "/api/v2/users/" + this.props.challenge.attributes.challenger, {
       method: "GET",
       headers: {
         "Authorization": credentials.token,

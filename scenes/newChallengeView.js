@@ -38,7 +38,6 @@ var NewChallengeView = React.createClass({
    },
 
   render: function() {
-    console.log(this.state.friend);
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
@@ -83,7 +82,7 @@ var NewChallengeView = React.createClass({
             Create Challenge
           </Text>
         </TouchableHighlight>
-        
+
         <OptionList ref="OPTIONLIST"/>
       </View>
     );

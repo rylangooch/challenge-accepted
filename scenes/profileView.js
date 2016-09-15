@@ -51,7 +51,6 @@ var ProfileView = React.createClass({
         }
       });
       let ownerResponseJson = await ownerResponse.json();
-      console.log('1');
       firstResponse = ownerResponseJson;
       let challengerResponse = await fetch('http://localhost:3000/challenges?filter[challenger]='+this.props.profile.userId, {
         method: "GET",
@@ -61,9 +60,7 @@ var ProfileView = React.createClass({
         }
       });
       let challengerResponseJson = await challengerResponse.json();
-      console.log('2');
       let combinedChallenges = firstResponse.data.concat(challengerResponseJson.data);
-      console.log(combinedChallenges);
       this._goToChallenges(combinedChallenges);
     } catch(error) {
       Alert.alert(
@@ -76,11 +73,10 @@ var ProfileView = React.createClass({
   },
 
   _goToChallenges: function (combinedChallenges) {
-    console.log(combinedChallenges)
     this.props.navigator.push({
       name: 'Challenges',
       passProps: {
-        userId: this.props.profile.userId,
+        profile: this.props.profile,
         challengesArray: combinedChallenges
       }
     });
