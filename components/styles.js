@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#15204C',
+    backgroundColor: '#efefef',
   },
   messageBox: {
     flex: 1,
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
     textAlign: 'center',
     marginTop: 4,
-    color: '#FFFFFF',
+    color: '#15204C',
   },
   versus: {
     fontSize: 30,
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 20,
     marginBottom: 5,
-    color: '#FFFFFF',
+    color: '#15204C',
   },
   welcomeTitle: {
     fontSize: 18,
@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
   mainButton: {
     height: 50,
     alignSelf: 'stretch',
-    backgroundColor: '#639FAB',
+    backgroundColor: '#15204C',
     margin: 10,
     borderRadius: 5,
     justifyContent: 'center',
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
   signInButton: {
     height: 50,
     alignSelf: 'stretch',
-    backgroundColor: '#639FAB',
+    backgroundColor: '#15204C',
     margin: 10,
     borderRadius: 5,
     justifyContent: 'center',
@@ -230,7 +230,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
     marginBottom: 10,
     borderRadius: 5,
-    backgroundColor: '#639FAB',
+    backgroundColor: '#15204C',
     borderBottomWidth:1,
     borderBottomColor: '#15204C',
     flexDirection:'row',
