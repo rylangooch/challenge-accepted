@@ -13,15 +13,19 @@ import {
 
 var styles = require("../components/styles");
 
+var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+
 var ChallengesView = React.createClass({
   getInitialState: function() {
-    var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    console.log("initial");
     return {
-      challenges: ds.cloneWithRows(this.props.challengeJson.data)
+      challenges: ds.cloneWithRows(this.props.challengesArray)
     }
   },
 
   render: function() {
+    console.log("render")
+    console.log(this.state.challenges)
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
@@ -38,6 +42,8 @@ var ChallengesView = React.createClass({
   },
 
   _renderRow: function(rowData) {
+    console.log("render row")
+    console.log(rowData.attributes.title)
     return (
       <TouchableHighlight style={styles.touchableHighlight} onPress={()=> this._onViewChallenge(rowData)}>
           <Text style={styles.buttonText}>{rowData.attributes.title}</Text>

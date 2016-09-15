@@ -52,6 +52,18 @@ PODS:
     - CocoaLumberjack (~> 2.0)
     - Lock/CoreUI
   - Masonry (0.6.4)
+  - React/Core (0.32.1):
+    - React/CSSLayout
+  - React/CSSLayout (0.32.1)
+  - React/RCTImage (0.32.1):
+    - React/Core
+    - React/RCTNetwork
+  - React/RCTNetwork (0.32.1):
+    - React/Core
+  - React/RCTText (0.32.1):
+    - React/Core
+  - React/RCTWebSocket (0.32.1):
+    - React/Core
   - SimpleKeychain (0.7.0)
   - TouchIDAuth (0.2.0):
     - SimpleKeychain (~> 0.3)
@@ -61,15 +73,24 @@ DEPENDENCIES:
   - Lock/Email
   - Lock/SMS
   - Lock/TouchID
+  - React/RCTImage (from `../node_modules/react-native`)
+  - React/RCTNetwork (from `../node_modules/react-native`)
+  - React/RCTText (from `../node_modules/react-native`)
+  - React/RCTWebSocket (from `../node_modules/react-native`)
+
+EXTERNAL SOURCES:
+  React:
+    :path: "../node_modules/react-native"
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
   Lock: 5aabf27ad5eb79f9faf43d34f3908479759aa8b3
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
+  React: 304abd16605aeff4b114da814812a78de24d4ca5
   SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
   TouchIDAuth: 0cf861f58a2cacfc1c12cb02de4850729d943c81
 
-PODFILE CHECKSUM: d637ac9de6bb320c3df53985bc1febcaf52e555d
+PODFILE CHECKSUM: a0ad4ac7409321c51e804e314ed7755110810c51
 
 COCOAPODS: 1.0.1

@@ -37,15 +37,6 @@ var NewChallengeView = React.createClass({
      });
    },
 
-  // _createUserList() {
-  //   var list = [];
-  //   for(var i = 0; i < this.props.userList.length; i++) {
-  //     list.push("<Option>" + this.props.userList[i].nickname + "</Option>")
-  //   }
-  //   return list;
-  // },
-
-
   render: function() {
 
     return (
@@ -76,7 +67,7 @@ var NewChallengeView = React.createClass({
           onChange={(event) => this.setState({challengeAnte: event.nativeEvent.text})}>
         </TextInput>
 
-          <Select
+        <Select
           style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFF' }}
           optionListRef={this._getOptionList.bind(this)}
           defaultValue="Select a friend to challenge"
@@ -84,7 +75,7 @@ var NewChallengeView = React.createClass({
           {this.props.userList.map((list) => {
             return <Option value = {{userId: list.user_id}}> {list.nickname} </Option>
           })}
-          </Select>
+        </Select>
 
           <OptionList ref="OPTIONLIST"/>
 
@@ -127,7 +118,8 @@ var NewChallengeView = React.createClass({
             "title": title,
             "description": description,
             "ante": ante,
-            "owner": userId
+            "owner": userId,
+            "challenger": this.state.friend.userId
           }
         }]
       })

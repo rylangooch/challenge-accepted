@@ -11,6 +11,7 @@ import {
 
 var credentials = require("../environment");
 var styles = require("../components/styles");
+var combinedChallenges = {};
 
 var ProfileView = React.createClass({
   render: function() {
@@ -39,32 +40,48 @@ var ProfileView = React.createClass({
     );
   },
 
-  _onViewChallenges: function() {
-    fetch('http://localhost:3000/challenges', {
-      method: "GET",
-      headers: {
-        'Accept': 'application/vnd.api+json',
-        'Content-Type': 'application/vnd.api+json',
-      }
-    })
-    .then((response) => response.json())
-    .then((responseJson) => {
-      this.props.navigator.push({
-        name: 'Challenges',
-        passProps: {
-          userId: this.props.profile.userId,
-          challengeJson: responseJson
+  _onViewChallenges: async function() {
+    var firstResponse = {};
+
+    try {
+      let ownerResponse = await fetch('http://localhost:3000/challenges?filter[owner]='+this.props.profile.userId, {
+        method: "GET",
+        headers: {
+          'Accept': 'application/vnd.api+json',
+          'Content-Type': 'application/vnd.api+json',
         }
       });
-    })
-    .catch((error) => {
+      let ownerResponseJson = await ownerResponse.json();
+      firstResponse = ownerResponseJson;
+      let challengerResponse = await fetch('http://localhost:3000/challenges?filter[challenger]='+this.props.profile.userId, {
+        method: "GET",
+        headers: {
+          'Accept': 'application/vnd.api+json',
+          'Content-Type': 'application/vnd.api+json',
+        }
+      });
+      let challengerResponseJson = await challengerResponse.json();
+      let combinedChallenges = firstResponse.data.concat(challengerResponseJson.data);
+      this._goToChallenges(combinedChallenges);
+    } catch(error) {
       Alert.alert(
         "List Retrieval Failed",
         [
           {text: 'OK'},
         ]
       )
-    })
+    };
+  },
+
+  _goToChallenges: function (combinedChallenges) {
+    console.log(combinedChallenges)
+    this.props.navigator.push({
+      name: 'Challenges',
+      passProps: {
+        userId: this.props.profile.userId,
+        challengesArray: combinedChallenges
+      }
+    });
   },
 
   _onCreateChallenge: function() {
