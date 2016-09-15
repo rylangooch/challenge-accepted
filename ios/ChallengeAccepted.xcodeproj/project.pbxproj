@@ -23,7 +23,6 @@
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		1B4C1E7C5E004C3085806F51 /* libA0RNLock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC30CDA052D428E931118D7 /* libA0RNLock.a */; };
-		4DBEDA0060FD69D140AE1844 /* libPods-ChallengeAcceptedTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0DB19E9E5C8148BEFC91B9 /* libPods-ChallengeAcceptedTests.a */; };
 		56469E67F5FF22560E4B98AB /* libPods-ChallengeAcceptedUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E1A9C90ECE2C31289CD0B9 /* libPods-ChallengeAcceptedUITests.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8B1EE40FE629A533F8C2EF40 /* libPods-ChallengeAccepted.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E632F5C8D36CADACC163DC /* libPods-ChallengeAccepted.a */; };
@@ -143,10 +142,8 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		9CFD199633E39D827ACA2FEA /* Pods-ChallengeAcceptedUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeAcceptedUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeAcceptedUITests/Pods-ChallengeAcceptedUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		A3C938524F32BCCDC365C71B /* Pods-ChallengeAcceptedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeAcceptedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeAcceptedTests/Pods-ChallengeAcceptedTests.release.xcconfig"; sourceTree = "<group>"; };
 		A3E632F5C8D36CADACC163DC /* libPods-ChallengeAccepted.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChallengeAccepted.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD3E2940D3FD916C5854C1E4 /* Pods-ChallengeAcceptedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeAcceptedUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeAcceptedUITests/Pods-ChallengeAcceptedUITests.release.xcconfig"; sourceTree = "<group>"; };
-		B69BE712887702E79C18583F /* Pods-ChallengeAcceptedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeAcceptedTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeAcceptedTests/Pods-ChallengeAcceptedTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BEC30CDA052D428E931118D7 /* libA0RNLock.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libA0RNLock.a; sourceTree = "<group>"; };
 		D2814D7BB6DFE2B213539266 /* Pods-ChallengeAccepted.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeAccepted.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeAccepted/Pods-ChallengeAccepted.release.xcconfig"; sourceTree = "<group>"; };
 		F39CE4701D81CC2200E9C0B7 /* ChallengeAcceptedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallengeAcceptedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,7 +158,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
-				4DBEDA0060FD69D140AE1844 /* libPods-ChallengeAcceptedTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,8 +301,6 @@
 			children = (
 				29EFCB40AFDDABB250AC3C39 /* Pods-ChallengeAccepted.debug.xcconfig */,
 				D2814D7BB6DFE2B213539266 /* Pods-ChallengeAccepted.release.xcconfig */,
-				B69BE712887702E79C18583F /* Pods-ChallengeAcceptedTests.debug.xcconfig */,
-				A3C938524F32BCCDC365C71B /* Pods-ChallengeAcceptedTests.release.xcconfig */,
 				9CFD199633E39D827ACA2FEA /* Pods-ChallengeAcceptedUITests.debug.xcconfig */,
 				AD3E2940D3FD916C5854C1E4 /* Pods-ChallengeAcceptedUITests.release.xcconfig */,
 			);
@@ -388,12 +382,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ChallengeAcceptedTests" */;
 			buildPhases = (
-				4D7E4BAC14A61D98E7D8FBFC /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				872802A7B2C243F08ED9EEB4 /* [CP] Embed Pods Frameworks */,
-				7E61ECE1B0A9265FBE8C2FA7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -642,21 +633,6 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
 		};
-		4D7E4BAC14A61D98E7D8FBFC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		784BB2655C24C7B42B33FC89 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -670,36 +646,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		7E61ECE1B0A9265FBE8C2FA7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChallengeAcceptedTests/Pods-ChallengeAcceptedTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		872802A7B2C243F08ED9EEB4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChallengeAcceptedTests/Pods-ChallengeAcceptedTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9699001F73C5B712DB045DF2 /* [CP] Embed Pods Frameworks */ = {
@@ -820,7 +766,6 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B69BE712887702E79C18583F /* Pods-ChallengeAcceptedTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -842,7 +787,6 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3C938524F32BCCDC365C71B /* Pods-ChallengeAcceptedTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;

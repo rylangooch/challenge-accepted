@@ -6,6 +6,22 @@ Rylan Gooch
 Terry Tilley
 Zak Richardson
 
+## To Get A Successful Build
+* Install rnpm `npm install rnpm -g`
+* Install Cocoapods `sudo gem install cocoapods`
+* Run command `rnpm link` overwrite podfile when prompted
+* Comment out the following block in the podfile `./ios/Podfile`
+```
+target 'ChallengeAcceptedTests' do
+  inherit! :search_paths
+  # Pods for testing
+end
+```
+* `cd` into ios folder
+* Run command `pod install`
+`cd` back to home directory
+* Run `react-native run-ios`
+
 ## User Stories
 
 ### MVP
