@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D923E0FD109E920BE211D0E2946EF9E6FE314107",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D923E0FD109E920BE211D0E2946EF9E6FE314107" : 0,
+    "B471B97C92E59ADB6BF1CAD1B05983F1BF0FF6B2" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BD97BBCB-C7EC-4480-A293-D6011586F41A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D923E0FD109E920BE211D0E2946EF9E6FE314107" : "challenge-accepted\/",
+    "B471B97C92E59ADB6BF1CAD1B05983F1BF0FF6B2" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ChallengeAccepted",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ios\/ChallengeAccepted.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:rylangooch\/instaclone.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B471B97C92E59ADB6BF1CAD1B05983F1BF0FF6B2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:challenge-accepted-team\/challenge-accepted.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D923E0FD109E920BE211D0E2946EF9E6FE314107"
+    }
+  ]
+}

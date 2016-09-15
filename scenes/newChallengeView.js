@@ -120,7 +120,7 @@ var NewChallengeView = React.createClass({
             "description": description,
             "ante": ante,
             "owner": userId,
-            "challengers": [userId, this.state.friend.userId]
+            "challenger": this.state.friend.userId
           }
         }]
       })

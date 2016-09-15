@@ -63,12 +63,12 @@ DEPENDENCIES:
   - Lock/TouchID
 
 SPEC CHECKSUMS:
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
-  Lock: 5aabf27ad5eb79f9faf43d34f3908479759aa8b3
-  Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
-  SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
-  TouchIDAuth: 0cf861f58a2cacfc1c12cb02de4850729d943c81
+  AFNetworking: c4a24c54cb648197e4cc60ebcad31343d7529db4
+  CocoaLumberjack: 3bfe3fa38baa0c99bf704c40533a538d07a0a081
+  Lock: c3504cd32d8c27c7a8bba9060924d9b4dbb4ab7b
+  Masonry: 4e89a97c517c351cb189119eb05c7c945f205cc5
+  SimpleKeychain: 04251ecd7181a8ecd7447d35bd0f1d837858c3a5
+  TouchIDAuth: df7c5e8548065ae4a41364c1dfb12f95e2f310af
 
 PODFILE CHECKSUM: f15f462711c604a20f7e1a7305efa9583f26b1fa
 
