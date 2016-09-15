@@ -37,7 +37,7 @@ var ChallengeView = React.createClass({
         style={styles.mainButton}
         underlayColor='#949494'
         onPress={this._onCompleteChallenge}>
-        <Text style={styles.mainButtonText}>Set Winner</Text>
+        <Text style={styles.mainButtonText}>Choose Winner</Text>
       </TouchableHighlight>;
     }
     var ownerIcon = <Image style={styles.ownerIcon} source={{uri: this.state.ownerIcon}} />;
