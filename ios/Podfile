@@ -7,10 +7,10 @@ target 'ChallengeAccepted' do
 
   # Pods for ChallengeAccepted
 
-  target 'ChallengeAcceptedTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+  # target 'ChallengeAcceptedTests' do
+  #   inherit! :search_paths
+  #   # Pods for testing
+  # end
 
   target 'ChallengeAcceptedUITests' do
     inherit! :search_paths
