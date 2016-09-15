@@ -78,13 +78,13 @@ var NewChallengeView = React.createClass({
           })}
         </Select>
 
-        <OptionList ref="OPTIONLIST"/>
-
         <TouchableHighlight underlayColor='#949494' style={styles.mainButton} onPress={this._viewFormSubmit}>
           <Text style={styles.mainButtonText}>
             Create Challenge
           </Text>
         </TouchableHighlight>
+        
+        <OptionList ref="OPTIONLIST"/>
       </View>
     );
   },

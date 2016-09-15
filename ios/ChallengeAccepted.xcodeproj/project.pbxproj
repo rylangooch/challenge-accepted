@@ -93,6 +93,13 @@
 			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
 			remoteInfo = React;
 		};
+		383F23D51D8AB00C00541CDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD7A6892EB5E46AF8D69BAA1 /* A0RNLock.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5F0499EE1CAE9F4A006F6C05;
+			remoteInfo = A0RNLock;
+		};
 		78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
@@ -303,6 +310,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		383F23D21D8AB00C00541CDB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				383F23D61D8AB00C00541CDB /* libA0RNLock.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		764D16205D3AD62F80D506DD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -485,7 +500,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = F33F9E331D8AAE4C00A924B2 /* Products */;
+
+					ProductGroup = 383F23D21D8AB00C00541CDB /* Products */;
 					ProjectRef = FD7A6892EB5E46AF8D69BAA1 /* A0RNLock.xcodeproj */;
 				},
 				{
@@ -593,6 +609,13 @@
 			fileType = archive.ar;
 			path = libReact.a;
 			remoteRef = 146834031AC3E56700842450 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		383F23D61D8AB00C00541CDB /* libA0RNLock.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libA0RNLock.a;
+			remoteRef = 383F23D51D8AB00C00541CDB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		78C398B91ACF4ADC00677621 /* libRCTLinking.a */ = {
