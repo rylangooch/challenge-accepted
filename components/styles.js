@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#15204C',
+    backgroundColor: '#efefef',
   },
   messageBox: {
     flex: 1,
@@ -56,12 +56,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-  },
-  playerNickname1: {
-
-  },
-  playerNickname2: {
-
   },
   challengeList: {
     flex: 6,
@@ -110,7 +104,7 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
     textAlign: 'center',
     marginTop: 4,
-    color: '#FFFFFF',
+    color: '#15204C',
   },
   versus: {
     fontSize: 30,
@@ -118,7 +112,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 30,
     marginRight: 5,
-    color: '#FFFFFF',
+    color: '#15204C',
   },
   welcome_title: {
     fontSize: 18,
@@ -132,7 +126,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 20,
     marginBottom: 5,
-    color: '#FFFFFF',
+    color: '#15204C',
   },
   welcomeTitle: {
     fontSize: 18,
@@ -140,7 +134,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 20,
     marginBottom: 5,
-    color: '#FFFFFF',
+    color: '#15204C',
   },
   createChallengeButton: {
     height: 50,
@@ -154,7 +148,7 @@ const styles = StyleSheet.create({
   mainButton: {
     height: 50,
     alignSelf: 'stretch',
-    backgroundColor: '#639FAB',
+    backgroundColor: '#15204C',
     margin: 10,
     borderRadius: 5,
     justifyContent: 'center',
@@ -173,7 +167,7 @@ const styles = StyleSheet.create({
   signInButton: {
     height: 50,
     alignSelf: 'stretch',
-    backgroundColor: '#639FAB',
+    backgroundColor: '#15204C',
     margin: 10,
     borderRadius: 5,
     justifyContent: 'center',
@@ -190,7 +184,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     borderRadius: 5,
     borderWidth: 1,
-    borderColor: '#FFF',
+    borderColor: '#c6c5c5',
     backgroundColor: '#FFF'
   },
   inputTextArea: {
@@ -201,7 +195,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     borderRadius: 5,
     borderWidth: 1,
-    borderColor: '#FFF',
+    borderColor: '#c6c5c5',
     backgroundColor: '#FFF'
   },
   dropDown: {
@@ -210,7 +204,7 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 5,
     borderWidth: 1,
-    borderColor: '#FFF',
+    borderColor: '#c6c5c5',
     justifyContent: 'center',
     backgroundColor: '#FFF',
     margin: 10,
@@ -230,7 +224,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
     marginBottom: 10,
     borderRadius: 5,
-    backgroundColor: '#639FAB',
+    backgroundColor: '#15204C',
     borderBottomWidth:1,
     borderBottomColor: '#15204C',
     flexDirection:'row',
@@ -256,11 +250,11 @@ const styles = StyleSheet.create({
   },
   heading: {
     fontSize: 24,
-    fontWeight: '300',
+    fontWeight: '600',
     marginTop: 100,
     marginBottom: 40,
     alignSelf: 'center',
-    color: '#FFF'
+    color: '#15204C'
   },
   winnerTitle: {
     fontSize: 24,
@@ -268,7 +262,8 @@ const styles = StyleSheet.create({
     marginTop: 100,
     marginBottom: 5,
     alignSelf: 'center',
-    color: '#FFF'
+    color: '#15204C',
+    fontWeight: '600'
   },
   winnerBox: {
     flex: 1,
@@ -280,7 +275,7 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     marginTop: 40,
     alignSelf: 'center',
-    color: '#FFF'
+    color: '#15204C'
   },
 });
 

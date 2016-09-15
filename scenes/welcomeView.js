@@ -20,7 +20,7 @@ var WelcomeView = React.createClass({
         <View style={styles.messageBox}>
           <Image
             style={styles.logo}
-            source={ require('../img/logo.png') }
+            source={ require('../img/logo-blue.png') }
           />
           <Text style={styles.title}>Challenge Accepted</Text>
           <Text style={styles.subtitle}>Bet friends, not computers</Text>

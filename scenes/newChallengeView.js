@@ -47,6 +47,7 @@ var NewChallengeView = React.createClass({
         <TextInput
           style={styles.input}
           placeholder="Title"
+          placeholderTextColor="#999"
           value={this.state.challengeTitle}
           onChange={(event) => this.setState({challengeTitle: event.nativeEvent.text})}>
         </TextInput>
@@ -55,6 +56,7 @@ var NewChallengeView = React.createClass({
           multiline={true}
           style={styles.inputTextArea}
           placeholder="Description"
+          placeholderTextColor="#999"
           value={this.state.challengeDescription}
           onChange={(event) => this.setState({challengeDescription: event.nativeEvent.text})}>
         </TextInput>
@@ -62,6 +64,7 @@ var NewChallengeView = React.createClass({
         <TextInput
           style={styles.input}
           placeholder="Ante"
+          placeholderTextColor="#999"
           value={this.state.challengeAnte}
           onChange={(event) => this.setState({challengeAnte: event.nativeEvent.text})}>
         </TextInput>
