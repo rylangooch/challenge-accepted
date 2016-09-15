@@ -41,7 +41,7 @@ var NewChallengeView = React.createClass({
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
-          New Challenge for {this.props.user_id}
+          Create New Challenge
         </Text>
 
         <TextInput
@@ -67,7 +67,6 @@ var NewChallengeView = React.createClass({
         </TextInput>
 
         <Select
-          width={355}
           style={styles.dropDown}
           optionListRef={this._getOptionList.bind(this)}
           defaultValue="Select a friend to challenge"

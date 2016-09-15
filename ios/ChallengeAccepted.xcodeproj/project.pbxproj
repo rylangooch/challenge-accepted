@@ -114,13 +114,6 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
-		F33F9E361D8AAE4C00A924B2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FD7A6892EB5E46AF8D69BAA1 /* A0RNLock.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5F0499EE1CAE9F4A006F6C05;
-			remoteInfo = A0RNLock;
-		};
 		F39CE4751D81CC2200E9C0B7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
@@ -388,14 +381,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F33F9E331D8AAE4C00A924B2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F33F9E371D8AAE4C00A924B2 /* libA0RNLock.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		F39CE4711D81CC2200E9C0B7 /* ChallengeAcceptedUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,7 +485,6 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-
 					ProductGroup = 383F23D21D8AB00C00541CDB /* Products */;
 					ProjectRef = FD7A6892EB5E46AF8D69BAA1 /* A0RNLock.xcodeproj */;
 				},
@@ -630,13 +614,6 @@
 			fileType = archive.ar;
 			path = libRCTText.a;
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F33F9E371D8AAE4C00A924B2 /* libA0RNLock.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libA0RNLock.a;
-			remoteRef = F33F9E361D8AAE4C00A924B2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -857,6 +834,7 @@
 			baseConfigurationReference = 29EFCB40AFDDABB250AC3C39 /* Pods-ChallengeAccepted.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEAD_CODE_STRIPPING = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -882,6 +860,7 @@
 			baseConfigurationReference = D2814D7BB6DFE2B213539266 /* Pods-ChallengeAccepted.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
