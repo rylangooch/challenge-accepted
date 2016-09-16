@@ -83,7 +83,7 @@ var ChallengeView = React.createClass({
     },
 
   _setWinner: function(winner) {
-    fetch("http://localhost:3000/challenges/" + this.props.challenge.id, {
+    fetch("https://pure-sierra-97917.herokuapp.com/challenges/" + this.props.challenge.id, {
       method: "PATCH",
       headers: {
         'Accept': 'application/vnd.api+json',
