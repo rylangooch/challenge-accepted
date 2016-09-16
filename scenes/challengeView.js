@@ -18,7 +18,7 @@ var ChallengeView = React.createClass({
     var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
     return {
-      comments: ds.cloneWithRows(this.props.commentJson.data)
+      comments: null
     }
   },
 
@@ -28,7 +28,7 @@ var ChallengeView = React.createClass({
     this.serverRequest = fetch(this.props.challenge.relationships.comments.links.related)
     .then((response) => response.json())
     .then((responseJson) => {
-      this.setState({ comments2: ds.cloneWithRows(responseJson.data) })
+      this.setState({ comments: ds.cloneWithRows(responseJson.data) })
     })
     .catch((error) => {
       console.error(error);
@@ -40,7 +40,8 @@ var ChallengeView = React.createClass({
   },
 
   render: function() {
-    if(this.state.comments2) {
+    console.log(this.state.comments);
+    if(this.state.comments) {
       return (
         <View style={styles.container}>
           <Text style={styles.heading}>
@@ -54,7 +55,7 @@ var ChallengeView = React.createClass({
               Comments
             </Text>
             <ListView
-              dataSource={this.state.comments2}
+              dataSource={this.state.comments}
               renderRow= {(rowData) => this._renderRow(rowData)}
             />
           </View>
