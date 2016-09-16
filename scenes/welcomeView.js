@@ -16,20 +16,20 @@ var styles = require("../components/styles");
 var WelcomeView = React.createClass({
   render: function() {
     return (
-      <View style={styles.container}>
+      <View style={styles.containerWelcome}>
         <View style={styles.messageBox}>
           <Image
             style={styles.logo}
             source={ require('../img/logo.png') }
           />
-          <Text style={styles.title}>Challenge Accepted</Text>
-          <Text style={styles.subtitle}>Bet friends, not computers</Text>
+          <Text style={styles.titleWelcome}>Challenge Accepted</Text>
+          <Text style={styles.subtitleWelcome}>Bet friends, not computers</Text>
         </View>
         <TouchableHighlight
-          style={styles.signInButton}
+          style={styles.welcomeButton}
           underlayColor='#949494'
           onPress={this._onLogin}>
-          <Text style={styles.signInButtonText}>Log In</Text>
+          <Text style={styles.welcomeButtonText}>Log In</Text>
         </TouchableHighlight>
       </View>
     );

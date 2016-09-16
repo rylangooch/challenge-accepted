@@ -56,8 +56,15 @@ var ChallengeView = React.createClass({
           {challengerIcon}
         </View>
         <View style={styles.messageBox}>
-          <Text style={styles.description}>
+          <Text style={styles.anteTitle}>Description</Text>
+          <Text style={styles.anteText}>
             {this.props.challenge.attributes.description}
+          </Text>
+        </View>
+        <View style={styles.messageBox}>
+          <Text style={styles.anteTitle}>Ante</Text>
+          <Text style={styles.anteText}>
+            {this.props.challenge.attributes.ante}
           </Text>
         </View>
         <View style={styles.winnerBox}>
@@ -83,7 +90,7 @@ var ChallengeView = React.createClass({
     },
 
   _setWinner: function(winner) {
-    fetch("http://localhost:3000/challenges/" + this.props.challenge.id, {
+    fetch("https://pure-sierra-97917.herokuapp.com/challenges/" + this.props.challenge.id, {
       method: "PATCH",
       headers: {
         'Accept': 'application/vnd.api+json',
