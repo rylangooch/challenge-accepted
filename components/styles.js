@@ -41,6 +41,11 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: '#efefef',
   },
+  containerWelcome: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: '#15204C',
+  },
   messageBox: {
     flex: 1,
     justifyContent: 'center',
@@ -106,9 +111,16 @@ const styles = StyleSheet.create({
     marginTop: 4,
     color: '#15204C',
   },
+  subtitleWelcome: {
+    fontSize: 17,
+    fontStyle: 'italic',
+    textAlign: 'center',
+    marginTop: 4,
+    color: '#fff',
+  },
   versus: {
     fontSize: 30,
-    fontWeight: '600',
+    fontWeight: '300',
     textAlign: 'center',
     marginTop: 30,
     marginRight: 5,
@@ -127,6 +139,14 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 5,
     color: '#15204C',
+  },
+  titleWelcome: {
+    fontSize: 28,
+    fontWeight: '300',
+    textAlign: 'center',
+    marginTop: 20,
+    marginBottom: 5,
+    color: '#fff',
   },
   welcomeTitle: {
     fontSize: 18,
@@ -175,6 +195,18 @@ const styles = StyleSheet.create({
   },
   signInButtonText: {
     color: '#ffffff',
+  },
+  welcomeButton: {
+    height: 50,
+    alignSelf: 'stretch',
+    backgroundColor: '#fff',
+    margin: 10,
+    borderRadius: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  welcomeButtonText: {
+    color: '#15204C',
   },
   input: {
     height: 50,
@@ -271,7 +303,7 @@ const styles = StyleSheet.create({
     marginBottom: 100,
   },
   description: {
-    fontSize: 22,
+    fontSize: 18,
     fontWeight: '400',
     marginTop: 40,
     alignSelf: 'center',

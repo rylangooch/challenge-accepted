@@ -41,7 +41,7 @@ var NewChallengeView = React.createClass({
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
-          Create New Challenge
+          New Challenge
         </Text>
 
         <TextInput
@@ -81,7 +81,7 @@ var NewChallengeView = React.createClass({
 
         <TouchableHighlight underlayColor='#949494' style={styles.mainButton} onPress={this._viewFormSubmit}>
           <Text style={styles.mainButtonText}>
-            Create Challenge
+            Create
           </Text>
         </TouchableHighlight>
 
