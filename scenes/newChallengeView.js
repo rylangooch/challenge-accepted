@@ -41,12 +41,13 @@ var NewChallengeView = React.createClass({
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
-          Create New Challenge
+          New Challenge
         </Text>
 
         <TextInput
           style={styles.input}
           placeholder="Title"
+          placeholderTextColor="#999"
           value={this.state.challengeTitle}
           onChange={(event) => this.setState({challengeTitle: event.nativeEvent.text})}>
         </TextInput>
@@ -55,6 +56,7 @@ var NewChallengeView = React.createClass({
           multiline={true}
           style={styles.inputTextArea}
           placeholder="Description"
+          placeholderTextColor="#999"
           value={this.state.challengeDescription}
           onChange={(event) => this.setState({challengeDescription: event.nativeEvent.text})}>
         </TextInput>
@@ -62,6 +64,7 @@ var NewChallengeView = React.createClass({
         <TextInput
           style={styles.input}
           placeholder="Ante"
+          placeholderTextColor="#999"
           value={this.state.challengeAnte}
           onChange={(event) => this.setState({challengeAnte: event.nativeEvent.text})}>
         </TextInput>
@@ -78,7 +81,7 @@ var NewChallengeView = React.createClass({
 
         <TouchableHighlight underlayColor='#949494' style={styles.mainButton} onPress={this._viewFormSubmit}>
           <Text style={styles.mainButtonText}>
-            Create Challenge
+            Create
           </Text>
         </TouchableHighlight>
 
