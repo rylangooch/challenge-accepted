@@ -298,6 +298,22 @@ const styles = StyleSheet.create({
     color: '#15204C',
     fontWeight: '600'
   },
+  anteTitle: {
+    fontSize: 24,
+    fontWeight: '300',
+    marginTop: 100,
+    marginBottom: 5,
+    alignSelf: 'center',
+    color: '#15204C',
+    fontWeight: '600'
+  },
+  anteText: {
+    fontSize: 18,
+    fontWeight: '400',
+    marginTop: 0,
+    alignSelf: 'center',
+    color: '#15204C'
+  },
   winnerBox: {
     flex: 1,
     justifyContent: 'center',
