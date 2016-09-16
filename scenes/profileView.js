@@ -43,7 +43,7 @@ var ProfileView = React.createClass({
   _onViewChallenges: async function() {
     var firstResponse = {};
     try {
-      let ownerResponse = await fetch('http://localhost:3000/challenges?filter[owner]='+this.props.profile.userId, {
+      let ownerResponse = await fetch('https://pure-sierra-97917.herokuapp.com/challenges?filter[owner]='+this.props.profile.userId, {
         method: "GET",
         headers: {
           'Accept': 'application/vnd.api+json',
@@ -52,7 +52,7 @@ var ProfileView = React.createClass({
       });
       let ownerResponseJson = await ownerResponse.json();
       firstResponse = ownerResponseJson;
-      let challengerResponse = await fetch('http://localhost:3000/challenges?filter[challenger]='+this.props.profile.userId, {
+      let challengerResponse = await fetch('https://pure-sierra-97917.herokuapp.com/challenges?filter[challenger]='+this.props.profile.userId, {
         method: "GET",
         headers: {
           'Accept': 'application/vnd.api+json',

@@ -107,7 +107,7 @@ var NewChallengeView = React.createClass({
       return;
     }
 
-    fetch('http://localhost:3000/challenges', {
+    fetch('https://pure-sierra-97917.herokuapp.com/challenges', {
       method: 'POST',
       headers: {
         'Accept': 'application/vnd.api+json',
