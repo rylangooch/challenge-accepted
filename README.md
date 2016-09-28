@@ -1,4 +1,5 @@
 # Challenge Accepted
+=================
 
 Challenge Accepted is a social challenge app that adds an element of social accountability to the innocuous bet. Bet friends, not computers.
 
