@@ -1,10 +1,13 @@
 # Challenge Accepted
 
-## Team Members
-Jason Luong
-Rylan Gooch
-Terry Tilley
-Zak Richardson
+Challenge Accepted is a social challenge app that adds an element of social accountability to the innocuous bet. Bet friends, not computers.
+
+Let's say you've got to the end of a long week of coding and you fancy challenging a friend to a ping-pong match, the loser of which buys a winner a drink. You can use Challenge Accepted to publicly challenge your friend, where users can engage with the event with comments and eventually setting the winner.
+
+The goal of this project was to learn a completely unfamiliar technology, React Native, and build an MVP all within 10 days. You can see the demo of the outcome [here](https://vimeo.com/182997446).
+
+*Built  by [Jason Luong](https://github.com/j-luong), [Rylan Gooch](https://github.com/rylangooch),
+[Terry Tilley](https://github.com/terrytilley) and [Zak Richardson](https://github.com/iamzakr)*
 
 ## To Get A Successful Build
 * Install rnpm `npm install rnpm -g`
